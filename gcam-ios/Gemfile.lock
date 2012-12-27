@@ -1,0 +1,84 @@
+GIT
+  remote: git://github.com/CocoaPods/CocoaPods.git
+  revision: 3f6e44ad364cac6bf2c911432d4db7b4c9d9b996
+  specs:
+    cocoapods (0.16.0)
+      activesupport (~> 3.2.6)
+      colored (~> 1.2)
+      escape (~> 0.0.4)
+      faraday (~> 0.8.1)
+      json (~> 1.7.3)
+      octokit (~> 1.7)
+      open4 (~> 1.3.0)
+      rake (~> 0.9.4)
+      xcodeproj (~> 0.4.0)
+
+GIT
+  remote: git://github.com/HipByte/motion-cocoapods.git
+  revision: 40da0705f878b8c6c2cdd917733d70dbadf7d728
+  specs:
+    motion-cocoapods (1.2.1)
+      cocoapods (>= 0.14.0)
+
+GIT
+  remote: git://github.com/rubymotion/BubbleWrap.git
+  revision: 36062f34db57d3bca1564db8f87b0aa1f046b823
+  specs:
+    bubble-wrap (1.1.4)
+
+GIT
+  remote: git://github.com/rubymotion/sugarcube.git
+  revision: 7c466e63a24a688a6b546aeb4b8c7b9bc10ffbc5
+  specs:
+    sugarcube (0.12)
+
+GIT
+  remote: git://github.com/yury/ib.git
+  revision: 6b902142733a8c1e526cc3bfbe1d93db8c8d5abc
+  specs:
+    ib (0.2.4)
+      thor (>= 0.15.4)
+      xcodeproj (>= 0.4.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (3.2.9)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    addressable (2.3.2)
+    colored (1.2)
+    escape (0.0.4)
+    faraday (0.8.4)
+      multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    hashie (1.2.0)
+    i18n (0.6.1)
+    json (1.7.5)
+    multi_json (1.5.0)
+    multipart-post (1.1.5)
+    netrc (0.7.7)
+    octokit (1.20.0)
+      addressable (~> 2.2)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.9)
+      hashie (~> 1.2)
+      multi_json (~> 1.3)
+      netrc (~> 0.7.7)
+    open4 (1.3.0)
+    rake (0.9.6)
+    thor (0.16.0)
+    xcodeproj (0.4.0)
+      activesupport (~> 3.2.6)
+      colored (~> 1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bubble-wrap!
+  cocoapods!
+  ib!
+  motion-cocoapods!
+  sugarcube!
