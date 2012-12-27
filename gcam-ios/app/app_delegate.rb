@@ -8,15 +8,15 @@ class AppDelegate
 
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
-    # switch_to_vc(load_vc("ServerList"))
+    switch_to_vc(load_vc("Panel"))
     true
   end
 
   def load_vc(identifier)
     if Device.iphone?
-      storyboard = UIStoryboard.storyboardWithName("GC2-ios", bundle: NSBundle.mainBundle)
+      storyboard = UIStoryboard.storyboardWithName("gcam", bundle: NSBundle.mainBundle)
     else
-      storyboard = UIStoryboard.storyboardWithName("GC2-ios-ipad", bundle: NSBundle.mainBundle)
+      storyboard = UIStoryboard.storyboardWithName("gcam-ipad", bundle: NSBundle.mainBundle)
     end
     vc = storyboard.instantiateViewControllerWithIdentifier(identifier)
   end

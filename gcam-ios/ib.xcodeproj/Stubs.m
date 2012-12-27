@@ -28,7 +28,7 @@
 @end
 
 
-@implementation BackPanelController
+@implementation PanelController
 
 @end
 

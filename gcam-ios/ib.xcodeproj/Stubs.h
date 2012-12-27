@@ -62,13 +62,18 @@
 @end
 
 
-@interface BackPanelController : UIViewController
+@interface PanelController : UIViewController
+
+@property IBOutlet id image_view;
+@property IBOutlet id output_image_view;
+@property IBOutlet id table_view;
 
 
 
-
-
-
+-(IBAction) frontCamera:(id) sender;
+-(IBAction) backCamera:(id) sender;
+-(IBAction) viewWillAppear:(id) animated;
+-(IBAction) toLibrary:(id) sender;
 
 @end
 

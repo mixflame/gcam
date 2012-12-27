@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c1b-D6-9bv">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--Panel Controller-->
+        <scene sceneID="XI4-BI-tU0">
+            <objects>
+                <viewController storyboardIdentifier="Panel" id="c1b-D6-9bv" customClass="PanelController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhj-lk-Yfg">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSL-lF-XJB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="DlZ-4Y-Fx9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cam (Front)">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="frontCamera:" destination="c1b-D6-9bv" eventType="touchUpInside" id="uh6-4l-dF3"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEn-za-2wg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="2MC-PA-30A"/>
+                                    <constraint firstAttribute="height" constant="114" id="bm6-Vg-zaT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnm-fd-HxT">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="D1F-rc-nAN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cam (Back)">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backCamera:" destination="c1b-D6-9bv" eventType="touchUpInside" id="3yK-zI-Mbw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUI-Ic-jCd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="Ush-VZ-Q1q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" red="1" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toLibrary:" destination="c1b-D6-9bv" eventType="touchUpInside" id="eGK-vB-Ybc"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="65y-3x-OyQ">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="Wq4-uf-59m"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="c1b-D6-9bv" id="bfR-Qh-DoP"/>
+                                    <outlet property="delegate" destination="c1b-D6-9bv" id="khu-qF-jJx"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-L1-Tcp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="w2z-dZ-gbK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G9O-L1-Tcp" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="6po-V7-r8D"/>
+                            <constraint firstItem="HSL-lF-XJB" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7xU-V1-Nb5"/>
+                            <constraint firstItem="eEn-za-2wg" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="9Mi-yb-4sq"/>
+                            <constraint firstItem="65y-3x-OyQ" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" constant="115" id="A6e-5O-47f"/>
+                            <constraint firstItem="eEn-za-2wg" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="LsI-9j-hoh"/>
+                            <constraint firstAttribute="trailing" secondItem="PUI-Ic-jCd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UNW-Qq-bLI"/>
+                            <constraint firstAttribute="bottom" secondItem="HSL-lF-XJB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="VF5-L6-DJg"/>
+                            <constraint firstItem="HSL-lF-XJB" firstAttribute="top" secondItem="Tnm-fd-HxT" secondAttribute="top" type="default" id="XxN-qa-8Tu"/>
+                            <constraint firstAttribute="bottom" secondItem="Tnm-fd-HxT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ydj-Og-DNm"/>
+                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="top" secondItem="Tnm-fd-HxT" secondAttribute="top" type="default" id="da7-Pv-9Xf"/>
+                            <constraint firstItem="G9O-L1-Tcp" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="eDT-Im-J4t"/>
+                            <constraint firstItem="65y-3x-OyQ" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="i13-om-7Yj"/>
+                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="leading" secondItem="Tnm-fd-HxT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="iGC-hM-BuP"/>
+                            <constraint firstItem="65y-3x-OyQ" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="jFi-pb-2qt"/>
+                            <constraint firstAttribute="bottom" secondItem="PUI-Ic-jCd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="luY-jv-bgp"/>
+                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="leading" secondItem="HSL-lF-XJB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="pWu-Be-efU"/>
+                            <constraint firstItem="G9O-L1-Tcp" firstAttribute="bottom" secondItem="eEn-za-2wg" secondAttribute="bottom" type="default" id="v7H-Wd-Yei"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image_view" destination="eEn-za-2wg" id="Tay-Lo-daU"/>
+                        <outlet property="output_image_view" destination="G9O-L1-Tcp" id="Kbn-Bg-4lG"/>
+                        <outlet property="table_view" destination="65y-3x-OyQ" id="c8l-EY-5bz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYi-Ue-c1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="30"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PanelController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PanelController.h"/>
+            <relationships>
+                <relationship kind="action" name="backCamera:"/>
+                <relationship kind="action" name="frontCamera:"/>
+                <relationship kind="action" name="toLibrary:"/>
+                <relationship kind="action" name="viewWillAppear:"/>
+                <relationship kind="outlet" name="image_view"/>
+                <relationship kind="outlet" name="output_image_view"/>
+                <relationship kind="outlet" name="table_view"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
