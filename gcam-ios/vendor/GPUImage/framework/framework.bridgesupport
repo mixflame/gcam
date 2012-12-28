@@ -1,0 +1,2691 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<struct name='GPUByteColorVector' type='{GPUByteColorVector=&quot;red&quot;C&quot;green&quot;C&quot;blue&quot;C&quot;alpha&quot;C}'>
+<field name='red' type='C' declared_type='GLubyte'/>
+<field name='green' type='C' declared_type='GLubyte'/>
+<field name='blue' type='C' declared_type='GLubyte'/>
+<field name='alpha' type='C' declared_type='GLubyte'/>
+</struct>
+<struct name='GPUMatrix3x3' type='{GPUMatrix3x3=&quot;one&quot;{GPUVector3=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f}&quot;two&quot;{GPUVector3=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f}&quot;three&quot;{GPUVector3=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f}}'>
+<field name='one' type='{GPUVector3=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f}' declared_type='GPUVector3'/>
+<field name='two' type='{GPUVector3=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f}' declared_type='GPUVector3'/>
+<field name='three' type='{GPUVector3=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f}' declared_type='GPUVector3'/>
+</struct>
+<struct name='GPUMatrix4x4' type='{GPUMatrix4x4=&quot;one&quot;{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}&quot;two&quot;{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}&quot;three&quot;{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}&quot;four&quot;{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}}'>
+<field name='one' type='{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}' declared_type='GPUVector4'/>
+<field name='two' type='{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}' declared_type='GPUVector4'/>
+<field name='three' type='{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}' declared_type='GPUVector4'/>
+<field name='four' type='{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}' declared_type='GPUVector4'/>
+</struct>
+<struct name='GPUVector3' type='{GPUVector3=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f}'>
+<field name='one' type='f' declared_type='GLfloat'/>
+<field name='two' type='f' declared_type='GLfloat'/>
+<field name='three' type='f' declared_type='GLfloat'/>
+</struct>
+<struct name='GPUVector4' type='{GPUVector4=&quot;one&quot;f&quot;two&quot;f&quot;three&quot;f&quot;four&quot;f}'>
+<field name='one' type='f' declared_type='GLfloat'/>
+<field name='two' type='f' declared_type='GLfloat'/>
+<field name='three' type='f' declared_type='GLfloat'/>
+<field name='four' type='f' declared_type='GLfloat'/>
+</struct>
+<constant name='kGPUImageColorAveragingVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageColorSwizzlingFragmentShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageDilationRadiusFourVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageDilationRadiusOneVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageDilationRadiusThreeVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageDilationRadiusTwoVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageLuminanceFragmentShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageNearbyTexelSamplingVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImagePassthroughFragmentShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageTwoInputTextureVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<constant name='kGPUImageVertexShaderString' const='true' type='@' declared_type='NSString*'/>
+<enum name='GPUPixelFormatBGRA' value='32993'/>
+<enum name='GPUPixelFormatRGB' value='6407'/>
+<enum name='GPUPixelFormatRGBA' value='6408'/>
+<enum name='GPUPixelTypeFloat' value='5126'/>
+<enum name='GPUPixelTypeUByte' value='5121'/>
+<enum name='kGPUImageFillModePreserveAspectRatio' value='1'/>
+<enum name='kGPUImageFillModePreserveAspectRatioAndFill' value='2'/>
+<enum name='kGPUImageFillModeStretch' value='0'/>
+<enum name='kGPUImageFlipHorizonal' value='4'/>
+<enum name='kGPUImageFlipVertical' value='3'/>
+<enum name='kGPUImageHistogramBlue' value='2'/>
+<enum name='kGPUImageHistogramGreen' value='1'/>
+<enum name='kGPUImageHistogramLuminance' value='4'/>
+<enum name='kGPUImageHistogramRGB' value='3'/>
+<enum name='kGPUImageHistogramRed' value='0'/>
+<enum name='kGPUImageNoRotation' value='0'/>
+<enum name='kGPUImageRotate180' value='6'/>
+<enum name='kGPUImageRotateLeft' value='1'/>
+<enum name='kGPUImageRotateRight' value='2'/>
+<enum name='kGPUImageRotateRightFlipVertical' value='5'/>
+<function name='GPUImageCreateResizedSampleBuffer'>
+<arg name='cameraFrame' type='^{__CVBuffer=}' declared_type='CVPixelBufferRef'/>
+<arg name='finalSize' type='{CGSize=ff}' declared_type='CGSize'/>
+<arg name='sampleBuffer' type='^^{opaqueCMSampleBuffer}' declared_type='CMSampleBufferRef*'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='reportAvailableMemoryForGPUImage'>
+<arg name='tag' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='runAsynchronouslyOnVideoProcessingQueue'>
+<arg function_pointer='true' name='block' type='@?' declared_type='void (^)(void)'>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='runOnMainQueueWithoutDeadlocking'>
+<arg function_pointer='true' name='block' type='@?' declared_type='void (^)(void)'>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='runSynchronouslyOnVideoProcessingQueue'>
+<arg function_pointer='true' name='block' type='@?' declared_type='void (^)(void)'>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='stillImageDataReleaseCallback'>
+<arg name='releaseRefCon' type='^v' declared_type='void*'/>
+<arg name='baseAddress' const='true' type='^v' declared_type='void*'/>
+<retval type='v' declared_type='void'/>
+</function>
+<class name='GLProgram'>
+<method selector='addAttribute:'>
+<arg name='attributeName' type='@' declared_type='NSString*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='attributeIndex:'>
+<arg name='attributeName' type='@' declared_type='NSString*' index='0'/>
+<retval type='I' declared_type='GLuint'/>
+</method>
+<method selector='fragmentShaderLog'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='initWithVertexShaderFilename:fragmentShaderFilename:'>
+<arg name='vShaderFilename' type='@' declared_type='NSString*' index='0'/>
+<arg name='fShaderFilename' type='@' declared_type='NSString*' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithVertexShaderString:fragmentShaderFilename:'>
+<arg name='vShaderString' type='@' declared_type='NSString*' index='0'/>
+<arg name='fShaderFilename' type='@' declared_type='NSString*' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithVertexShaderString:fragmentShaderString:'>
+<arg name='vShaderString' type='@' declared_type='NSString*' index='0'/>
+<arg name='fShaderString' type='@' declared_type='NSString*' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initialized'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='link'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='programLog'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='setInitialized:'>
+<arg name='initialized' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='uniformIndex:'>
+<arg name='uniformName' type='@' declared_type='NSString*' index='0'/>
+<retval type='I' declared_type='GLuint'/>
+</method>
+<method selector='use'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='validate'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='vertexShaderLog'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='GPUImage3x3ConvolutionFilter'>
+<method selector='convolutionKernel'>
+<retval type='{GPUMatrix3x3={GPUVector3=fff}{GPUVector3=fff}{GPUVector3=fff}}' declared_type='GPUMatrix3x3'/>
+</method>
+<method selector='setConvolutionKernel:'>
+<arg name='convolutionKernel' type='{GPUMatrix3x3={GPUVector3=fff}{GPUVector3=fff}{GPUVector3=fff}}' declared_type='GPUMatrix3x3' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImage3x3TextureSamplingFilter'>
+<method selector='setTexelHeight:'>
+<arg name='texelHeight' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelWidth:'>
+<arg name='texelWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='texelHeight'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='texelWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageAdaptiveThresholdFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageAlphaBlendFilter'>
+<method selector='mix'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setMix:'>
+<arg name='mix' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageAverageColor'>
+<method selector='colorAverageProcessingFinishedBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(CGFloat, CGFloat, CGFloat, CGFloat, CMTime)'>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='extractAverageColorAtFrameTime:'>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setColorAverageProcessingFinishedBlock:'>
+<arg function_pointer='true' name='colorAverageProcessingFinishedBlock' type='@?' declared_type='void (^)(CGFloat, CGFloat, CGFloat, CGFloat, CMTime)' index='0'>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageAverageLuminanceThresholdFilter'>
+<method selector='setThresholdMultiplier:'>
+<arg name='thresholdMultiplier' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='thresholdMultiplier'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageBoxBlurFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageBrightnessFilter'>
+<method selector='brightness'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBrightness:'>
+<arg name='brightness' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageBuffer'>
+<method selector='bufferSize'>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method selector='setBufferSize:'>
+<arg name='bufferSize' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageBulgeDistortionFilter'>
+<method selector='center'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='radius'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='scale'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setCenter:'>
+<arg name='center' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRadius:'>
+<arg name='radius' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setScale:'>
+<arg name='scale' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageCannyEdgeDetectionFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='lowerThreshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLowerThreshold:'>
+<arg name='lowerThreshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelHeight:'>
+<arg name='texelHeight' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelWidth:'>
+<arg name='texelWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUpperThreshold:'>
+<arg name='upperThreshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='texelHeight'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='texelWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='upperThreshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageChromaKeyBlendFilter'>
+<method selector='setColorToReplaceRed:green:blue:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSmoothing:'>
+<arg name='smoothing' type='f' declared_type='GLfloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setThresholdSensitivity:'>
+<arg name='thresholdSensitivity' type='f' declared_type='GLfloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='smoothing'>
+<retval type='f' declared_type='GLfloat'/>
+</method>
+<method selector='thresholdSensitivity'>
+<retval type='f' declared_type='GLfloat'/>
+</method>
+</class>
+<class name='GPUImageChromaKeyFilter'>
+<method selector='setColorToReplaceRed:green:blue:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSmoothing:'>
+<arg name='smoothing' type='f' declared_type='GLfloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setThresholdSensitivity:'>
+<arg name='thresholdSensitivity' type='f' declared_type='GLfloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='smoothing'>
+<retval type='f' declared_type='GLfloat'/>
+</method>
+<method selector='thresholdSensitivity'>
+<retval type='f' declared_type='GLfloat'/>
+</method>
+</class>
+<class name='GPUImageClosingFilter'>
+<method selector='initWithRadius:'>
+<arg name='radius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageColorMatrixFilter'>
+<method selector='colorMatrix'>
+<retval type='{GPUMatrix4x4={GPUVector4=ffff}{GPUVector4=ffff}{GPUVector4=ffff}{GPUVector4=ffff}}' declared_type='GPUMatrix4x4'/>
+</method>
+<method selector='intensity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setColorMatrix:'>
+<arg name='colorMatrix' type='{GPUMatrix4x4={GPUVector4=ffff}{GPUVector4=ffff}{GPUVector4=ffff}{GPUVector4=ffff}}' declared_type='GPUMatrix4x4' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setIntensity:'>
+<arg name='intensity' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageContrastFilter'>
+<method selector='contrast'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setContrast:'>
+<arg name='contrast' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageCropFilter'>
+<method selector='cropRegion'>
+<retval type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect'/>
+</method>
+<method selector='initWithCropRegion:'>
+<arg name='newCropRegion' type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='setCropRegion:'>
+<arg name='cropRegion' type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageCrosshairGenerator'>
+<method selector='crosshairWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='renderCrosshairsFromArray:count:frameTime:'>
+<arg name='crosshairCoordinates' type='^f' declared_type='GLfloat*' index='0'/>
+<arg name='numberOfCrosshairs' type='I' declared_type='NSUInteger' index='1'/>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCrosshairColorRed:green:blue:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCrosshairWidth:'>
+<arg name='crosshairWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageCrosshatchFilter'>
+<method selector='crossHatchSpacing'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='lineWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setCrossHatchSpacing:'>
+<arg name='crossHatchSpacing' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLineWidth:'>
+<arg name='lineWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageDilationFilter'>
+<method selector='initWithRadius:'>
+<arg name='dilationRadius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageDirectionalNonMaximumSuppressionFilter'>
+<method selector='lowerThreshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setLowerThreshold:'>
+<arg name='lowerThreshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelHeight:'>
+<arg name='texelHeight' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelWidth:'>
+<arg name='texelWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUpperThreshold:'>
+<arg name='upperThreshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='texelHeight'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='texelWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='upperThreshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageDissolveBlendFilter'>
+<method selector='mix'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setMix:'>
+<arg name='mix' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageEmbossFilter'>
+<method selector='intensity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setIntensity:'>
+<arg name='intensity' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageErosionFilter'>
+<method selector='initWithRadius:'>
+<arg name='erosionRadius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageExposureFilter'>
+<method selector='exposure'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setExposure:'>
+<arg name='exposure' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageFalseColorFilter'>
+<method selector='firstColor'>
+<retval type='{GPUVector4=ffff}' declared_type='GPUVector4'/>
+</method>
+<method selector='secondColor'>
+<retval type='{GPUVector4=ffff}' declared_type='GPUVector4'/>
+</method>
+<method selector='setFirstColor:'>
+<arg name='firstColor' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFirstColorRed:green:blue:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSecondColor:'>
+<arg name='secondColor' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSecondColorRed:green:blue:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageFastBlurFilter'>
+<method selector='blurPasses'>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='initWithFragmentShaderFromString:'>
+<arg name='fragmentShaderString' type='@' declared_type='NSString*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='setBlurPasses:'>
+<arg name='blurPasses' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageFilter'>
+<method selector='createFilterFBOofSize:'>
+<arg name='currentFBOSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='destroyFilterFBO'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='informTargetsAboutNewFrameAtTime:'>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='initWithFragmentShaderFromFile:'>
+<arg name='fragmentShaderFilename' type='@' declared_type='NSString*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithFragmentShaderFromString:'>
+<arg name='fragmentShaderString' type='@' declared_type='NSString*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithVertexShaderFromString:fragmentShaderFromString:'>
+<arg name='vertexShaderString' type='@' declared_type='NSString*' index='0'/>
+<arg name='fragmentShaderString' type='@' declared_type='NSString*' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initializeAttributes'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='outputFrameSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='preventRendering'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='recreateFilterFBO'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='releaseInputTexturesIfNeeded'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='renderTarget'>
+<retval type='^{__CVBuffer=}' declared_type='CVPixelBufferRef'/>
+</method>
+<method selector='renderToTextureWithVertices:textureCoordinates:sourceTexture:'>
+<arg name='vertices' const='true' type='^f' declared_type='GLfloat*' index='0'/>
+<arg name='textureCoordinates' const='true' type='^f' declared_type='GLfloat*' index='1'/>
+<arg name='sourceTexture' type='I' declared_type='GLuint' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='rotatedPoint:forRotation:'>
+<arg name='pointToRotate' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<arg name='rotation' type='i' declared_type='GPUImageRotationMode' index='1'/>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='rotatedSize:forIndex:'>
+<arg name='sizeToRotate' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='setBackgroundColorRed:green:blue:alpha:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<arg name='alphaComponent' type='f' declared_type='GLfloat' index='3'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFilterFBO'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFloat:forUniform:program:'>
+<arg name='floatValue' type='f' declared_type='GLfloat' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFloat:forUniformName:'>
+<arg name='newFloat' type='f' declared_type='GLfloat' index='0'/>
+<arg name='uniformName' type='@' declared_type='NSString*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFloatArray:length:forUniform:'>
+<arg name='array' type='^f' declared_type='GLfloat*' index='0'/>
+<arg name='count' type='i' declared_type='GLsizei' index='1'/>
+<arg name='uniformName' type='@' declared_type='NSString*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFloatArray:length:forUniform:program:'>
+<arg name='arrayValue' type='^f' declared_type='GLfloat*' index='0'/>
+<arg name='arrayLength' type='i' declared_type='GLsizei' index='1'/>
+<arg name='uniform' type='i' declared_type='GLint' index='2'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='3'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFloatVec3:forUniformName:'>
+<arg name='newVec3' type='{GPUVector3=fff}' declared_type='GPUVector3' index='0'/>
+<arg name='uniformName' type='@' declared_type='NSString*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFloatVec4:forUniform:'>
+<arg name='newVec4' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<arg name='uniformName' type='@' declared_type='NSString*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInteger:forUniform:program:'>
+<arg name='intValue' type='i' declared_type='GLint' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInteger:forUniformName:'>
+<arg name='newInteger' type='i' declared_type='GLint' index='0'/>
+<arg name='uniformName' type='@' declared_type='NSString*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMatrix3f:forUniform:program:'>
+<arg name='matrix' type='{GPUMatrix3x3={GPUVector3=fff}{GPUVector3=fff}{GPUVector3=fff}}' declared_type='GPUMatrix3x3' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMatrix4f:forUniform:program:'>
+<arg name='matrix' type='{GPUMatrix4x4={GPUVector4=ffff}{GPUVector4=ffff}{GPUVector4=ffff}{GPUVector4=ffff}}' declared_type='GPUMatrix4x4' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOutputFBO'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPoint:forUniform:program:'>
+<arg name='pointValue' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPoint:forUniformName:'>
+<arg name='newPoint' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<arg name='uniformName' type='@' declared_type='NSString*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPreventRendering:'>
+<arg name='preventRendering' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSize:forUniform:program:'>
+<arg name='sizeValue' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSize:forUniformName:'>
+<arg name='newSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<arg name='uniformName' type='@' declared_type='NSString*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUniformsForProgramAtIndex:'>
+<arg name='programIndex' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setVec3:forUniform:program:'>
+<arg name='vectorValue' type='{GPUVector3=fff}' declared_type='GPUVector3' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setVec4:forUniform:program:'>
+<arg name='vectorValue' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<arg name='uniform' type='i' declared_type='GLint' index='1'/>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setupFilterForSize:'>
+<arg name='filterFrameSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sizeOfFBO'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method class_method='true' selector='textureCoordinatesForRotation:'>
+<arg name='rotationMode' type='i' declared_type='GPUImageRotationMode' index='0'/>
+<retval const='true' type='^f' declared_type='GLfloat*'/>
+</method>
+</class>
+<class name='GPUImageFilterGroup'>
+<method selector='addFilter:'>
+<arg name='newFilter' type='@' declared_type='GPUImageOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='filterAtIndex:'>
+<arg name='filterIndex' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='GPUImageOutput*'/>
+</method>
+<method selector='filterCount'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='initialFilters'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='inputFilterToIgnoreForUpdates'>
+<retval type='@' declared_type='GPUImageOutput*'/>
+</method>
+<method selector='setInitialFilters:'>
+<arg name='initialFilters' type='@' declared_type='NSArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInputFilterToIgnoreForUpdates:'>
+<arg name='inputFilterToIgnoreForUpdates' type='@' declared_type='GPUImageOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTerminalFilter:'>
+<arg name='terminalFilter' type='@' declared_type='GPUImageOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='terminalFilter'>
+<retval type='@' declared_type='GPUImageOutput*'/>
+</method>
+</class>
+<class name='GPUImageFilterPipeline'>
+<method selector='addFilter:'>
+<arg name='filter' type='@' declared_type='GPUImageFilter*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='addFilter:atIndex:'>
+<arg name='filter' type='@' declared_type='GPUImageFilter*' index='0'/>
+<arg name='insertIndex' type='I' declared_type='NSUInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='currentFilteredFrame'>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='filters'>
+<retval type='@' declared_type='NSMutableArray*'/>
+</method>
+<method selector='initWithConfiguration:input:output:'>
+<arg name='configuration' type='@' declared_type='NSDictionary*' index='0'/>
+<arg name='input' type='@' declared_type='GPUImageOutput*' index='1'/>
+<arg name='output' type='@' declared_type='id' index='2'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithConfigurationFile:input:output:'>
+<arg name='configuration' type='@' declared_type='NSURL*' index='0'/>
+<arg name='input' type='@' declared_type='GPUImageOutput*' index='1'/>
+<arg name='output' type='@' declared_type='id' index='2'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithOrderedFilters:input:output:'>
+<arg name='filters' type='@' declared_type='NSArray*' index='0'/>
+<arg name='input' type='@' declared_type='GPUImageOutput*' index='1'/>
+<arg name='output' type='@' declared_type='id' index='2'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='input'>
+<retval type='@' declared_type='GPUImageOutput*'/>
+</method>
+<method selector='newCGImageFromCurrentFilteredFrame'>
+<retval type='^{CGImage=}' declared_type='CGImageRef'/>
+</method>
+<method selector='newCGImageFromCurrentFilteredFrameWithOrientation:'>
+<arg name='imageOrientation' type='i' declared_type='UIImageOrientation' index='0'/>
+<retval type='^{CGImage=}' declared_type='CGImageRef'/>
+</method>
+<method selector='output'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='removeAllFilters'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeFilterAtIndex:'>
+<arg name='index' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='replaceAllFilters:'>
+<arg name='newFilters' type='@' declared_type='NSArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='replaceFilterAtIndex:withFilter:'>
+<arg name='index' type='I' declared_type='NSUInteger' index='0'/>
+<arg name='filter' type='@' declared_type='GPUImageFilter*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFilters:'>
+<arg name='filters' type='@' declared_type='NSMutableArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInput:'>
+<arg name='input' type='@' declared_type='GPUImageOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOutput:'>
+<arg name='output' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageGammaFilter'>
+<method selector='gamma'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setGamma:'>
+<arg name='gamma' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageGaussianBlurFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageGaussianSelectiveBlurFilter'>
+<method selector='aspectRatio'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='excludeBlurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='excludeCirclePoint'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='excludeCircleRadius'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setAspectRatio:'>
+<arg name='aspectRatio' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setExcludeBlurSize:'>
+<arg name='excludeBlurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setExcludeCirclePoint:'>
+<arg name='excludeCirclePoint' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setExcludeCircleRadius:'>
+<arg name='excludeCircleRadius' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageHarrisCornerDetectionFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='cornersDetectedBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(GLfloat *, NSUInteger, CMTime)'>
+<arg type='^f' declared_type='GLfloat*'/>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='initWithCornerDetectionFragmentShader:'>
+<arg name='cornerDetectionFragmentShader' type='@' declared_type='NSString*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='intermediateImages'>
+<retval type='@' declared_type='NSMutableArray*'/>
+</method>
+<method selector='sensitivity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCornersDetectedBlock:'>
+<arg function_pointer='true' name='cornersDetectedBlock' type='@?' declared_type='void (^)(GLfloat *, NSUInteger, CMTime)' index='0'>
+<arg type='^f' declared_type='GLfloat*'/>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSensitivity:'>
+<arg name='sensitivity' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setThreshold:'>
+<arg name='threshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='threshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageHazeFilter'>
+<method selector='distance'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setDistance:'>
+<arg name='distance' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSlope:'>
+<arg name='slope' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='slope'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageHighPassFilter'>
+<method selector='filterStrength'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setFilterStrength:'>
+<arg name='filterStrength' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageHighlightShadowFilter'>
+<method selector='highlights'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setHighlights:'>
+<arg name='highlights' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setShadows:'>
+<arg name='shadows' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shadows'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageHistogramFilter'>
+<method selector='downsamplingFactor'>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method selector='generatePointCoordinates'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='initWithHistogramType:'>
+<arg name='newHistogramType' type='i' declared_type='GPUImageHistogramType' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initializeSecondaryAttributes'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDownsamplingFactor:'>
+<arg name='downsamplingFactor' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageHoughTransformLineDetector'>
+<method selector='edgeThreshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='intermediateImages'>
+<retval type='@' declared_type='NSMutableArray*'/>
+</method>
+<method selector='lineDetectionThreshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='linesDetectedBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(GLfloat *, NSUInteger, CMTime)'>
+<arg type='^f' declared_type='GLfloat*'/>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='setEdgeThreshold:'>
+<arg name='edgeThreshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLineDetectionThreshold:'>
+<arg name='lineDetectionThreshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLinesDetectedBlock:'>
+<arg function_pointer='true' name='linesDetectedBlock' type='@?' declared_type='void (^)(GLfloat *, NSUInteger, CMTime)' index='0'>
+<arg type='^f' declared_type='GLfloat*'/>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageHueFilter'>
+<method selector='hue'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setHue:'>
+<arg name='hue' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageJFAVoroniFilter'>
+<method selector='setSizeInPixels:'>
+<arg name='sizeInPixels' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sizeInPixels'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+</class>
+<class name='GPUImageKuwaharaFilter'>
+<method selector='radius'>
+<retval type='I' declared_type='GLuint'/>
+</method>
+<method selector='setRadius:'>
+<arg name='radius' type='I' declared_type='GLuint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageLanczosResamplingFilter'>
+<method selector='originalImageSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='setOriginalImageSize:'>
+<arg name='originalImageSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageLevelsFilter'>
+<method selector='setBlueMin:gamma:max:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBlueMin:gamma:max:minOut:maxOut:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<arg name='minOut' type='f' declared_type='CGFloat' index='3'/>
+<arg name='maxOut' type='f' declared_type='CGFloat' index='4'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGreenMin:gamma:max:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGreenMin:gamma:max:minOut:maxOut:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<arg name='minOut' type='f' declared_type='CGFloat' index='3'/>
+<arg name='maxOut' type='f' declared_type='CGFloat' index='4'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMin:gamma:max:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMin:gamma:max:minOut:maxOut:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<arg name='minOut' type='f' declared_type='CGFloat' index='3'/>
+<arg name='maxOut' type='f' declared_type='CGFloat' index='4'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRedMin:gamma:max:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRedMin:gamma:max:minOut:maxOut:'>
+<arg name='min' type='f' declared_type='CGFloat' index='0'/>
+<arg name='mid' type='f' declared_type='CGFloat' index='1'/>
+<arg name='max' type='f' declared_type='CGFloat' index='2'/>
+<arg name='minOut' type='f' declared_type='CGFloat' index='3'/>
+<arg name='maxOut' type='f' declared_type='CGFloat' index='4'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageLineGenerator'>
+<method selector='lineWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='renderLinesFromArray:count:frameTime:'>
+<arg name='lineSlopeAndIntercepts' type='^f' declared_type='GLfloat*' index='0'/>
+<arg name='numberOfLines' type='I' declared_type='NSUInteger' index='1'/>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLineColorRed:green:blue:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLineWidth:'>
+<arg name='lineWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageLowPassFilter'>
+<method selector='filterStrength'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setFilterStrength:'>
+<arg name='filterStrength' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageLuminanceThresholdFilter'>
+<method selector='setThreshold:'>
+<arg name='threshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='threshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageLuminosity'>
+<method selector='extractLuminosityAtFrameTime:'>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='initializeSecondaryAttributes'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='luminosityProcessingFinishedBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(CGFloat, CMTime)'>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='setLuminosityProcessingFinishedBlock:'>
+<arg function_pointer='true' name='luminosityProcessingFinishedBlock' type='@?' declared_type='void (^)(CGFloat, CMTime)' index='0'>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageMonochromeFilter'>
+<method selector='color'>
+<retval type='{GPUVector4=ffff}' declared_type='GPUVector4'/>
+</method>
+<method selector='intensity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setColor:'>
+<arg name='color' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setColorRed:green:blue:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setIntensity:'>
+<arg name='intensity' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageMosaicFilter'>
+<method selector='colorOn'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='displayTileSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='inputTileSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='numTiles'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='setColorOn:'>
+<arg name='yes' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDisplayTileSize:'>
+<arg name='displayTileSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInputTileSize:'>
+<arg name='inputTileSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setNumTiles:'>
+<arg name='numTiles' type='f' declared_type='float' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTileSet:'>
+<arg name='tileSet' type='@' declared_type='NSString*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageMotionDetector'>
+<method selector='lowPassFilterStrength'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='motionDetectionBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(CGPoint, CGFloat, CMTime)'>
+<arg type='{CGPoint=ff}' declared_type='CGPoint'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='setLowPassFilterStrength:'>
+<arg name='lowPassFilterStrength' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMotionDetectionBlock:'>
+<arg function_pointer='true' name='motionDetectionBlock' type='@?' declared_type='void (^)(CGPoint, CGFloat, CMTime)' index='0'>
+<arg type='{CGPoint=ff}' declared_type='CGPoint'/>
+<arg type='f' declared_type='CGFloat'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageMovie'>
+<method selector='asset'>
+<retval type='@' declared_type='AVAsset*'/>
+</method>
+<method selector='enableSynchronizedEncodingUsingMovieWriter:'>
+<arg name='movieWriter' type='@' declared_type='GPUImageMovieWriter*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='endProcessing'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='initWithAsset:'>
+<arg name='asset' type='@' declared_type='AVAsset*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithURL:'>
+<arg name='url' type='@' declared_type='NSURL*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='playAtActualSpeed'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='processMovieFrame:'>
+<arg name='movieSampleBuffer' type='^{opaqueCMSampleBuffer=}' declared_type='CMSampleBufferRef' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='readNextAudioSampleFromOutput:'>
+<arg name='readerAudioTrackOutput' type='@' declared_type='AVAssetReaderTrackOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='readNextVideoFrameFromOutput:'>
+<arg name='readerVideoTrackOutput' type='@' declared_type='AVAssetReaderTrackOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='runBenchmark'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setAsset:'>
+<arg name='asset' type='@' declared_type='AVAsset*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPlayAtActualSpeed:'>
+<arg name='playAtActualSpeed' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRunBenchmark:'>
+<arg name='runBenchmark' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUrl:'>
+<arg name='url' type='@' declared_type='NSURL*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='startProcessing'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='textureCacheSetup'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='url'>
+<retval type='@' declared_type='NSURL*'/>
+</method>
+</class>
+<class name='GPUImageMovieWriter'>
+<method selector='audioInputReadyCallback'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(void)'>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='completionBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(void)'>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='enableSynchronizationCallbacks'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='enabled'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='encodingLiveVideo'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='failureBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(NSError *)'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='finishRecording'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='hasAudioTrack'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='initWithMovieURL:size:'>
+<arg name='newMovieURL' type='@' declared_type='NSURL*' index='0'/>
+<arg name='newSize' type='{CGSize=ff}' declared_type='CGSize' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithMovieURL:size:fileType:outputSettings:'>
+<arg name='newMovieURL' type='@' declared_type='NSURL*' index='0'/>
+<arg name='newSize' type='{CGSize=ff}' declared_type='CGSize' index='1'/>
+<arg name='newFileType' type='@' declared_type='NSString*' index='2'/>
+<arg name='outputSettings' type='@' declared_type='NSMutableDictionary*' index='3'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='processAudioBuffer:'>
+<arg name='audioBuffer' type='^{opaqueCMSampleBuffer=}' declared_type='CMSampleBufferRef' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setAudioInputReadyCallback:'>
+<arg function_pointer='true' name='audioInputReadyCallback' type='@?' declared_type='void (^)(void)' index='0'>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCompletionBlock:'>
+<arg function_pointer='true' name='completionBlock' type='@?' declared_type='void (^)(void)' index='0'>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEnabled:'>
+<arg name='enabled' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEncodingLiveVideo:'>
+<arg name='encodingLiveVideo' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFailureBlock:'>
+<arg function_pointer='true' name='failureBlock' type='@?' declared_type='void (^)(NSError *)' index='0'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setHasAudioTrack:'>
+<arg name='hasAudioTrack' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setHasAudioTrack:audioSettings:'>
+<arg name='hasAudioTrack' type='B' declared_type='BOOL' index='0'/>
+<arg name='audioOutputSettings' type='@' declared_type='NSDictionary*' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setShouldPassthroughAudio:'>
+<arg name='shouldPassthroughAudio' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setVideoInputReadyCallback:'>
+<arg function_pointer='true' name='videoInputReadyCallback' type='@?' declared_type='void (^)(void)' index='0'>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shouldPassthroughAudio'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='startRecording'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='startRecordingInOrientation:'>
+<arg name='orientationTransform' type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='videoInputReadyCallback'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(void)'>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+</class>
+<class name='GPUImageOpacityFilter'>
+<method selector='opacity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setOpacity:'>
+<arg name='opacity' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageOpenGLESContext'>
+<method selector='context'>
+<retval type='@' declared_type='EAGLContext*'/>
+</method>
+<method selector='contextQueue'>
+<retval type='@' declared_type='dispatch_queue_t'/>
+</method>
+<method selector='currentShaderProgram'>
+<retval type='@' declared_type='GLProgram*'/>
+</method>
+<method class_method='true' selector='maximumTextureSizeForThisDevice'>
+<retval type='i' declared_type='GLint'/>
+</method>
+<method class_method='true' selector='maximumTextureUnitsForThisDevice'>
+<retval type='i' declared_type='GLint'/>
+</method>
+<method selector='presentBufferForDisplay'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='programForVertexShaderString:fragmentShaderString:'>
+<arg name='vertexShaderString' type='@' declared_type='NSString*' index='0'/>
+<arg name='fragmentShaderString' type='@' declared_type='NSString*' index='1'/>
+<retval type='@' declared_type='GLProgram*'/>
+</method>
+<method class_method='true' selector='setActiveShaderProgram:'>
+<arg name='shaderProgram' type='@' declared_type='GLProgram*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCurrentShaderProgram:'>
+<arg name='currentShaderProgram' type='@' declared_type='GLProgram*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='sharedImageProcessingOpenGLESContext'>
+<retval type='@' declared_type='GPUImageOpenGLESContext*'/>
+</method>
+<method class_method='true' selector='sharedOpenGLESQueue'>
+<retval type='@' declared_type='dispatch_queue_t'/>
+</method>
+<method class_method='true' selector='sizeThatFitsWithinATextureForSize:'>
+<arg name='inputSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method class_method='true' selector='supportsFastTextureUpload'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method class_method='true' selector='useImageProcessingContext'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='useSharegroup:'>
+<arg name='sharegroup' type='@' declared_type='EAGLSharegroup*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageOpeningFilter'>
+<method selector='initWithRadius:'>
+<arg name='radius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageOutput'>
+<method selector='addTarget:'>
+<arg name='newTarget' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='addTarget:atTextureLocation:'>
+<arg name='newTarget' type='@' declared_type='id' index='0'/>
+<arg name='textureLocation' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='audioEncodingTarget'>
+<retval type='@' declared_type='GPUImageMovieWriter*'/>
+</method>
+<method selector='cleanupOutputImage'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='conserveMemoryForNextFrame'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='deleteOutputTexture'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='enabled'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='forceProcessingAtSize:'>
+<arg name='frameSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='forceProcessingAtSizeRespectingAspectRatio:'>
+<arg name='frameSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='frameProcessingCompletionBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(GPUImageOutput *, CMTime)'>
+<arg type='@' declared_type='GPUImageOutput*'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='imageByFilteringImage:'>
+<arg name='imageToFilter' type='@' declared_type='UIImage*' index='0'/>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='imageFromCurrentlyProcessedOutput'>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='imageFromCurrentlyProcessedOutputWithOrientation:'>
+<arg name='imageOrientation' type='i' declared_type='UIImageOrientation' index='0'/>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='initializeOutputTextureIfNeeded'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='newCGImageByFilteringCGImage:'>
+<arg name='imageToFilter' type='^{CGImage=}' declared_type='CGImageRef' index='0'/>
+<retval type='^{CGImage=}' declared_type='CGImageRef'/>
+</method>
+<method selector='newCGImageByFilteringCGImage:orientation:'>
+<arg name='imageToFilter' type='^{CGImage=}' declared_type='CGImageRef' index='0'/>
+<arg name='orientation' type='i' declared_type='UIImageOrientation' index='1'/>
+<retval type='^{CGImage=}' declared_type='CGImageRef'/>
+</method>
+<method selector='newCGImageByFilteringImage:'>
+<arg name='imageToFilter' type='@' declared_type='UIImage*' index='0'/>
+<retval type='^{CGImage=}' declared_type='CGImageRef'/>
+</method>
+<method selector='newCGImageFromCurrentlyProcessedOutput'>
+<retval type='^{CGImage=}' declared_type='CGImageRef'/>
+</method>
+<method selector='newCGImageFromCurrentlyProcessedOutputWithOrientation:'>
+<arg name='imageOrientation' type='i' declared_type='UIImageOrientation' index='0'/>
+<retval type='^{CGImage=}' declared_type='CGImageRef'/>
+</method>
+<method selector='notifyTargetsAboutNewOutputTexture'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='prepareForImageCapture'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeAllTargets'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeTarget:'>
+<arg name='targetToRemove' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setAudioEncodingTarget:'>
+<arg name='audioEncodingTarget' type='@' declared_type='GPUImageMovieWriter*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEnabled:'>
+<arg name='enabled' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFrameProcessingCompletionBlock:'>
+<arg function_pointer='true' name='frameProcessingCompletionBlock' type='@?' declared_type='void (^)(GPUImageOutput *, CMTime)' index='0'>
+<arg type='@' declared_type='GPUImageOutput*'/>
+<arg type='{_CMTime=qiIq}' declared_type='CMTime'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInputTextureForTarget:atIndex:'>
+<arg name='target' type='@' declared_type='id' index='0'/>
+<arg name='inputTextureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setShouldIgnoreUpdatesToThisTarget:'>
+<arg name='shouldIgnoreUpdatesToThisTarget' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setShouldSmoothlyScaleOutput:'>
+<arg name='shouldSmoothlyScaleOutput' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTargetToIgnoreForUpdates:'>
+<arg name='targetToIgnoreForUpdates' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shouldIgnoreUpdatesToThisTarget'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='shouldSmoothlyScaleOutput'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='targetToIgnoreForUpdates'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='targets'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='textureForOutput'>
+<retval type='I' declared_type='GLuint'/>
+</method>
+</class>
+<class name='GPUImagePerlinNoiseFilter'>
+<method selector='colorFinish'>
+<retval type='{GPUVector4=ffff}' declared_type='GPUVector4'/>
+</method>
+<method selector='colorStart'>
+<retval type='{GPUVector4=ffff}' declared_type='GPUVector4'/>
+</method>
+<method selector='scale'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='setColorFinish:'>
+<arg name='colorFinish' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setColorStart:'>
+<arg name='colorStart' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setScale:'>
+<arg name='scale' type='f' declared_type='float' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImagePicture'>
+<method selector='initWithCGImage:'>
+<arg name='newImageSource' type='^{CGImage=}' declared_type='CGImageRef' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithCGImage:smoothlyScaleOutput:'>
+<arg name='newImageSource' type='^{CGImage=}' declared_type='CGImageRef' index='0'/>
+<arg name='smoothlyScaleOutput' type='B' declared_type='BOOL' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithImage:'>
+<arg name='newImageSource' type='@' declared_type='UIImage*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithImage:smoothlyScaleOutput:'>
+<arg name='newImageSource' type='@' declared_type='UIImage*' index='0'/>
+<arg name='smoothlyScaleOutput' type='B' declared_type='BOOL' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='outputImageSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='processImage'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImagePinchDistortionFilter'>
+<method selector='center'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='radius'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='scale'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setCenter:'>
+<arg name='center' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRadius:'>
+<arg name='radius' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setScale:'>
+<arg name='scale' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImagePixellateFilter'>
+<method selector='fractionalWidthOfAPixel'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setFractionalWidthOfAPixel:'>
+<arg name='fractionalWidthOfAPixel' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImagePixellatePositionFilter'>
+<method selector='center'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='fractionalWidthOfAPixel'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='radius'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setCenter:'>
+<arg name='center' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFractionalWidthOfAPixel:'>
+<arg name='fractionalWidthOfAPixel' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRadius:'>
+<arg name='radius' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImagePolarPixellateFilter'>
+<method selector='center'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='pixelSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='setCenter:'>
+<arg name='center' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPixelSize:'>
+<arg name='pixelSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImagePolkaDotFilter'>
+<method selector='dotScaling'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setDotScaling:'>
+<arg name='dotScaling' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImagePosterizeFilter'>
+<method selector='colorLevels'>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method selector='setColorLevels:'>
+<arg name='colorLevels' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageRGBClosingFilter'>
+<method selector='initWithRadius:'>
+<arg name='radius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageRGBDilationFilter'>
+<method selector='initWithRadius:'>
+<arg name='dilationRadius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageRGBErosionFilter'>
+<method selector='initWithRadius:'>
+<arg name='erosionRadius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageRGBFilter'>
+<method selector='blue'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='green'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='red'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlue:'>
+<arg name='blue' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGreen:'>
+<arg name='green' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRed:'>
+<arg name='red' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageRGBOpeningFilter'>
+<method selector='initWithRadius:'>
+<arg name='radius' type='I' declared_type='NSUInteger' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='GPUImageRawDataInput'>
+<method selector='initWithBytes:size:'>
+<arg name='bytesToUpload' type='*' declared_type='GLubyte*' index='0'/>
+<arg name='imageSize' type='{CGSize=ff}' declared_type='CGSize' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithBytes:size:pixelFormat:'>
+<arg name='bytesToUpload' type='*' declared_type='GLubyte*' index='0'/>
+<arg name='imageSize' type='{CGSize=ff}' declared_type='CGSize' index='1'/>
+<arg name='pixelFormat' type='i' declared_type='GPUPixelFormat' index='2'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithBytes:size:pixelFormat:type:'>
+<arg name='bytesToUpload' type='*' declared_type='GLubyte*' index='0'/>
+<arg name='imageSize' type='{CGSize=ff}' declared_type='CGSize' index='1'/>
+<arg name='pixelFormat' type='i' declared_type='GPUPixelFormat' index='2'/>
+<arg name='pixelType' type='i' declared_type='GPUPixelType' index='3'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='outputImageSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='pixelFormat'>
+<retval type='i' declared_type='GPUPixelFormat'/>
+</method>
+<method selector='pixelType'>
+<retval type='i' declared_type='GPUPixelType'/>
+</method>
+<method selector='processData'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPixelFormat:'>
+<arg name='pixelFormat' type='i' declared_type='GPUPixelFormat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPixelType:'>
+<arg name='pixelType' type='i' declared_type='GPUPixelType' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='updateDataFromBytes:size:'>
+<arg name='bytesToUpload' type='*' declared_type='GLubyte*' index='0'/>
+<arg name='imageSize' type='{CGSize=ff}' declared_type='CGSize' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageRawDataOutput'>
+<method selector='bytesPerRowInOutput'>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method selector='colorAtLocation:'>
+<arg name='locationInImage' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='{GPUByteColorVector=CCCC}' declared_type='GPUByteColorVector'/>
+</method>
+<method selector='enabled'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='initWithImageSize:resultsInBGRAFormat:'>
+<arg name='newImageSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<arg name='resultsInBGRAFormat' type='B' declared_type='BOOL' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='newFrameAvailableBlock'>
+<retval function_pointer='true' type='@?' declared_type='void (^)(void)'>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='rawBytesForImage'>
+<retval type='*' declared_type='GLubyte*'/>
+</method>
+<method selector='setEnabled:'>
+<arg name='enabled' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setNewFrameAvailableBlock:'>
+<arg function_pointer='true' name='newFrameAvailableBlock' type='@?' declared_type='void (^)(void)' index='0'>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageSaturationFilter'>
+<method selector='saturation'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setSaturation:'>
+<arg name='saturation' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageSharpenFilter'>
+<method selector='setSharpness:'>
+<arg name='sharpness' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sharpness'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageSmoothToonFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='quantizationLevels'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setQuantizationLevels:'>
+<arg name='quantizationLevels' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelHeight:'>
+<arg name='texelHeight' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelWidth:'>
+<arg name='texelWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setThreshold:'>
+<arg name='threshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='texelHeight'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='texelWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='threshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageSobelEdgeDetectionFilter'>
+<method selector='setTexelHeight:'>
+<arg name='texelHeight' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTexelWidth:'>
+<arg name='texelWidth' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='texelHeight'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='texelWidth'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageSolidColorGenerator'>
+<method selector='color'>
+<retval type='{GPUVector4=ffff}' declared_type='GPUVector4'/>
+</method>
+<method selector='setColor:'>
+<arg name='color' type='{GPUVector4=ffff}' declared_type='GPUVector4' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setColorRed:green:blue:alpha:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<arg name='alphaComponent' type='f' declared_type='GLfloat' index='3'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageSphereRefractionFilter'>
+<method selector='center'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='radius'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='refractiveIndex'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setCenter:'>
+<arg name='center' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRadius:'>
+<arg name='radius' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRefractiveIndex:'>
+<arg name='refractiveIndex' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageStillCamera'>
+<method selector='capturePhotoAsImageProcessedUpToFilter:withCompletionHandler:'>
+<arg name='finalFilterInChain' type='@' declared_type='GPUImageOutput*' index='0'/>
+<arg function_pointer='true' name='block' type='@?' declared_type='void (^)(UIImage *, NSError *)' index='1'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='capturePhotoAsJPEGProcessedUpToFilter:withCompletionHandler:'>
+<arg name='finalFilterInChain' type='@' declared_type='GPUImageOutput*' index='0'/>
+<arg function_pointer='true' name='block' type='@?' declared_type='void (^)(NSData *, NSError *)' index='1'>
+<arg type='@' declared_type='NSData*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='capturePhotoAsPNGProcessedUpToFilter:withCompletionHandler:'>
+<arg name='finalFilterInChain' type='@' declared_type='GPUImageOutput*' index='0'/>
+<arg function_pointer='true' name='block' type='@?' declared_type='void (^)(NSData *, NSError *)' index='1'>
+<arg type='@' declared_type='NSData*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='capturePhotoAsSampleBufferWithCompletionHandler:'>
+<arg function_pointer='true' name='block' type='@?' declared_type='void (^)(CMSampleBufferRef, NSError *)' index='0'>
+<arg type='^{opaqueCMSampleBuffer=}' declared_type='CMSampleBufferRef'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='currentCaptureMetadata'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='jpegCompressionQuality'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setJpegCompressionQuality:'>
+<arg name='jpegCompressionQuality' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageStretchDistortionFilter'>
+<method selector='center'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='setCenter:'>
+<arg name='center' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageSwirlFilter'>
+<method selector='angle'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='center'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='radius'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setAngle:'>
+<arg name='angle' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCenter:'>
+<arg name='center' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRadius:'>
+<arg name='radius' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageTextureInput'>
+<method selector='initWithTexture:size:'>
+<arg name='newInputTexture' type='I' declared_type='GLuint' index='0'/>
+<arg name='newTextureSize' type='{CGSize=ff}' declared_type='CGSize' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='processTextureWithFrameTime:'>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageTextureOutput'>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='enabled'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEnabled:'>
+<arg name='enabled' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='texture'>
+<retval type='I' declared_type='GLuint'/>
+</method>
+</class>
+<class name='GPUImageThresholdEdgeDetectionFilter'>
+<method selector='setThreshold:'>
+<arg name='threshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='threshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageThresholdedNonMaximumSuppressionFilter'>
+<method selector='setThreshold:'>
+<arg name='threshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='threshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageTiltShiftFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='bottomFocusLevel'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='focusFallOffRate'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBottomFocusLevel:'>
+<arg name='bottomFocusLevel' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFocusFallOffRate:'>
+<arg name='focusFallOffRate' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTopFocusLevel:'>
+<arg name='topFocusLevel' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='topFocusLevel'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageToneCurveFilter'>
+<method selector='blueControlPoints'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='getPreparedSplineCurve:'>
+<arg name='points' type='@' declared_type='NSArray*' index='0'/>
+<retval type='@' declared_type='NSMutableArray*'/>
+</method>
+<method selector='greenControlPoints'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='initWithACV:'>
+<arg name='curveFilename' type='@' declared_type='NSString*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithACVURL:'>
+<arg name='curveFileURL' type='@' declared_type='NSURL*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='redControlPoints'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='rgbCompositeControlPoints'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='secondDerivative:'>
+<arg name='cgPoints' type='@' declared_type='NSArray*' index='0'/>
+<retval type='@' declared_type='NSMutableArray*'/>
+</method>
+<method selector='setBlueControlPoints:'>
+<arg name='blueControlPoints' type='@' declared_type='NSArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGreenControlPoints:'>
+<arg name='greenControlPoints' type='@' declared_type='NSArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPointsWithACV:'>
+<arg name='curveFilename' type='@' declared_type='NSString*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPointsWithACVURL:'>
+<arg name='curveFileURL' type='@' declared_type='NSURL*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRGBControlPoints:'>
+<arg name='points' type='@' declared_type='NSArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRedControlPoints:'>
+<arg name='redControlPoints' type='@' declared_type='NSArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRgbCompositeControlPoints:'>
+<arg name='rgbCompositeControlPoints' type='@' declared_type='NSArray*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='splineCurve:'>
+<arg name='points' type='@' declared_type='NSArray*' index='0'/>
+<retval type='@' declared_type='NSMutableArray*'/>
+</method>
+<method selector='updateToneCurveTexture'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageToonFilter'>
+<method selector='quantizationLevels'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setQuantizationLevels:'>
+<arg name='quantizationLevels' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setThreshold:'>
+<arg name='threshold' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='threshold'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageTransformFilter'>
+<method selector='affineTransform'>
+<retval type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform'/>
+</method>
+<method selector='anchorTopLeft'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='ignoreAspectRatio'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setAffineTransform:'>
+<arg name='affineTransform' type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setAnchorTopLeft:'>
+<arg name='anchorTopLeft' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setIgnoreAspectRatio:'>
+<arg name='ignoreAspectRatio' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTransform3D:'>
+<arg name='transform3D' type='{CATransform3D=ffffffffffffffff}' declared_type='CATransform3D' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='transform3D'>
+<retval type='{CATransform3D=ffffffffffffffff}' declared_type='CATransform3D'/>
+</method>
+</class>
+<class name='GPUImageTwoInputFilter'>
+<method selector='disableFirstFrameCheck'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='disableSecondFrameCheck'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageTwoPassFilter'>
+<method selector='initWithFirstStageFragmentShaderFromString:secondStageFragmentShaderFromString:'>
+<arg name='firstStageFragmentShaderString' type='@' declared_type='NSString*' index='0'/>
+<arg name='secondStageFragmentShaderString' type='@' declared_type='NSString*' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithFirstStageVertexShaderFromString:firstStageFragmentShaderFromString:secondStageVertexShaderFromString:secondStageFragmentShaderFromString:'>
+<arg name='firstStageVertexShaderString' type='@' declared_type='NSString*' index='0'/>
+<arg name='firstStageFragmentShaderString' type='@' declared_type='NSString*' index='1'/>
+<arg name='secondStageVertexShaderString' type='@' declared_type='NSString*' index='2'/>
+<arg name='secondStageFragmentShaderString' type='@' declared_type='NSString*' index='3'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initializeSecondOutputTextureIfNeeded'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='initializeSecondaryAttributes'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageUIElement'>
+<method selector='initWithLayer:'>
+<arg name='inputLayer' type='@' declared_type='CALayer*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithView:'>
+<arg name='inputView' type='@' declared_type='UIView*' index='0'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='layerSizeInPixels'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='update'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageUnsharpMaskFilter'>
+<method selector='blurSize'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='intensity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='setBlurSize:'>
+<arg name='blurSize' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setIntensity:'>
+<arg name='intensity' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='GPUImageVideoCamera'>
+<method selector='averageFrameDurationDuringCapture'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='cameraPosition'>
+<retval type='i' declared_type='AVCaptureDevicePosition'/>
+</method>
+<method selector='captureSession'>
+<retval type='@' declared_type='AVCaptureSession*'/>
+</method>
+<method selector='captureSessionPreset'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='frameRate'>
+<retval type='i' declared_type='NSInteger'/>
+</method>
+<method selector='horizontallyMirrorFrontFacingCamera'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='horizontallyMirrorRearFacingCamera'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='initWithSessionPreset:cameraPosition:'>
+<arg name='sessionPreset' type='@' declared_type='NSString*' index='0'/>
+<arg name='cameraPosition' type='i' declared_type='AVCaptureDevicePosition' index='1'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='inputCamera'>
+<retval type='@' declared_type='AVCaptureDevice*'/>
+</method>
+<method selector='isFrontFacingCameraPresent'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='outputImageOrientation'>
+<retval type='i' declared_type='UIInterfaceOrientation'/>
+</method>
+<method selector='pauseCameraCapture'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='processAudioSampleBuffer:'>
+<arg name='sampleBuffer' type='^{opaqueCMSampleBuffer=}' declared_type='CMSampleBufferRef' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='processVideoSampleBuffer:'>
+<arg name='sampleBuffer' type='^{opaqueCMSampleBuffer=}' declared_type='CMSampleBufferRef' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeInputsAndOutputs'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='resumeCameraCapture'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='rotateCamera'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='runBenchmark'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setCaptureSessionPreset:'>
+<arg name='captureSessionPreset' type='@' declared_type='NSString*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFrameRate:'>
+<arg name='frameRate' type='i' declared_type='NSInteger' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setHorizontallyMirrorFrontFacingCamera:'>
+<arg name='horizontallyMirrorFrontFacingCamera' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setHorizontallyMirrorRearFacingCamera:'>
+<arg name='horizontallyMirrorRearFacingCamera' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOutputImageOrientation:'>
+<arg name='outputImageOrientation' type='i' declared_type='UIInterfaceOrientation' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRunBenchmark:'>
+<arg name='runBenchmark' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='startCameraCapture'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='stopCameraCapture'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='videoCaptureConnection'>
+<retval type='@' declared_type='AVCaptureConnection*'/>
+</method>
+</class>
+<class name='GPUImageView'>
+<method selector='enabled'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='fillMode'>
+<retval type='i' declared_type='GPUImageFillModeType'/>
+</method>
+<method selector='setBackgroundColorRed:green:blue:alpha:'>
+<arg name='redComponent' type='f' declared_type='GLfloat' index='0'/>
+<arg name='greenComponent' type='f' declared_type='GLfloat' index='1'/>
+<arg name='blueComponent' type='f' declared_type='GLfloat' index='2'/>
+<arg name='alphaComponent' type='f' declared_type='GLfloat' index='3'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEnabled:'>
+<arg name='enabled' type='B' declared_type='BOOL' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFillMode:'>
+<arg name='fillMode' type='i' declared_type='GPUImageFillModeType' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sizeInPixels'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+</class>
+<class name='GPUImageVignetteFilter'>
+<method selector='setVignetteCenter:'>
+<arg name='vignetteCenter' type='{CGPoint=ff}' declared_type='CGPoint' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setVignetteColor:'>
+<arg name='vignetteColor' type='{GPUVector3=fff}' declared_type='GPUVector3' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setVignetteEnd:'>
+<arg name='vignetteEnd' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setVignetteStart:'>
+<arg name='vignetteStart' type='f' declared_type='CGFloat' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='vignetteCenter'>
+<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+</method>
+<method selector='vignetteColor'>
+<retval type='{GPUVector3=fff}' declared_type='GPUVector3'/>
+</method>
+<method selector='vignetteEnd'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='vignetteStart'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+</class>
+<class name='GPUImageVoroniConsumerFilter'>
+<method selector='setSizeInPixels:'>
+<arg name='sizeInPixels' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sizeInPixels'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+</class>
+<class name='GPUImageWhiteBalanceFilter'>
+<method selector='setTemperature:'>
+<arg name='temperature' type='i' declared_type='int' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTint:'>
+<arg name='tint' type='i' declared_type='int' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='temperature'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='tint'>
+<retval type='i' declared_type='int'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='conserveMemoryForNextFrame'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='enabled'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='endProcessing'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='maximumOutputSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='movieRecordingCompleted'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='movieRecordingFailedWithError:'>
+<arg name='error' type='@' declared_type='NSError*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='newFrameReadyAtTime:atIndex:'>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='newFrameReadyFromTextureOutput:'>
+<arg name='callbackTextureOutput' type='@' declared_type='GPUImageTextureOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='nextAvailableTextureIndex'>
+<retval type='i' declared_type='NSInteger'/>
+</method>
+<method selector='setInputRotation:atIndex:'>
+<arg name='newInputRotation' type='i' declared_type='GPUImageRotationMode' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInputSize:atIndex:'>
+<arg name='newSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInputTexture:atIndex:'>
+<arg name='newInputTexture' type='I' declared_type='GLuint' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTextureDelegate:atIndex:'>
+<arg name='newTextureDelegate' type='@' declared_type='id' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shouldIgnoreUpdatesToThisTarget'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='textureNoLongerNeededForTarget:'>
+<arg name='textureTarget' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='willOutputSampleBuffer:'>
+<arg name='sampleBuffer' type='^{opaqueCMSampleBuffer=}' declared_type='CMSampleBufferRef' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<informal_protocol name='GPUImageInput'>
+<method type='v8@0:4' selector='conserveMemoryForNextFrame'>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='B8@0:4' selector='enabled'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method type='v8@0:4' selector='endProcessing'>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='{CGSize=ff}8@0:4' selector='maximumOutputSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method type='v36@0:4{?=qiIq}8i32' selector='newFrameReadyAtTime:atIndex:'>
+<arg name='frameTime' type='{_CMTime=qiIq}' declared_type='CMTime' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='i8@0:4' selector='nextAvailableTextureIndex'>
+<retval type='i' declared_type='NSInteger'/>
+</method>
+<method type='v16@0:4i8i12' selector='setInputRotation:atIndex:'>
+<arg name='newInputRotation' type='i' declared_type='GPUImageRotationMode' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v20@0:4{CGSize=ff}8i16' selector='setInputSize:atIndex:'>
+<arg name='newSize' type='{CGSize=ff}' declared_type='CGSize' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4I8i12' selector='setInputTexture:atIndex:'>
+<arg name='newInputTexture' type='I' declared_type='GLuint' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8i12' selector='setTextureDelegate:atIndex:'>
+<arg name='newTextureDelegate' type='@' declared_type='id' index='0'/>
+<arg name='textureIndex' type='i' declared_type='NSInteger' index='1'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='B8@0:4' selector='shouldIgnoreUpdatesToThisTarget'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GPUImageMovieWriterDelegate'>
+<method type='v8@0:4' selector='movieRecordingCompleted'>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4@8' selector='movieRecordingFailedWithError:'>
+<arg name='error' type='@' declared_type='NSError*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GPUImageTextureDelegate'>
+<method type='v12@0:4@8' selector='textureNoLongerNeededForTarget:'>
+<arg name='textureTarget' type='@' declared_type='id' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GPUImageTextureOutputDelegate'>
+<method type='v12@0:4@8' selector='newFrameReadyFromTextureOutput:'>
+<arg name='callbackTextureOutput' type='@' declared_type='GPUImageTextureOutput*' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GPUImageVideoCameraDelegate'>
+<method type='v12@0:4^{opaqueCMSampleBuffer=}8' selector='willOutputSampleBuffer:'>
+<arg name='sampleBuffer' type='^{opaqueCMSampleBuffer=}' declared_type='CMSampleBufferRef' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+</signatures>

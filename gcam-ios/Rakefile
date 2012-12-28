@@ -23,5 +23,17 @@ Bundler.require(:RubyMotion)
 Motion::Project::App.setup do |app|
   app.name = 'GCAM'
 
+  app.deployment_target = '5.1'
+
   app.vendor_project('vendor/Filtrr/FiltrrApp/FiltrrApp/Filtrr', :static)
+
+  app.vendor_project('vendor/GPUImage/framework', :xcode,
+  :target => 'GPUImage',
+  :headers_dir => 'Source')
+
+  app.frameworks << 'OpenGLES'
+  app.frameworks << 'QuartzCore'
+  app.frameworks << 'CoreVideo'
+  app.frameworks << 'CoreMedia'
+  app.frameworks << 'AVFoundation'
 end
