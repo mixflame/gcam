@@ -73,6 +73,7 @@
 -(IBAction) frontCamera:(id) sender;
 -(IBAction) backCamera:(id) sender;
 -(IBAction) viewWillAppear:(id) animated;
+-(IBAction) saveImage:(id) sender;
 -(IBAction) toLibrary:(id) sender;
 
 @end

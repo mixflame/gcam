@@ -37,23 +37,25 @@ class PanelController < UIViewController
     output_image_view.setImage new_image
   end
 
+  def saveImage(sender)
+    imageToSave = output_image_view.image
+    UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+  end
+
   def frontCamera(sender)
     BW::Device.camera.front.picture(media_types: [:movie, :image]) do |result|
-      # image_view = UIImageView.alloc.initWithImage(result[:original_image])
       image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
     end
   end
 
   def backCamera(sender)
     BW::Device.camera.rear.picture(media_types: [:movie, :image]) do |result|
-      # image_view = UIImageView.alloc.initWithImage(result[:original_image])
       image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
     end
   end
 
   def toLibrary(sender)
     BW::Device.camera.any.picture(media_types: [:movie, :image]) do |result|
-      # image_view = UIImageView.alloc.initWithImage(result[:original_image])
       image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
     end
   end
