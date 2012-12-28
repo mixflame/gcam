@@ -101,8 +101,10 @@
                             <constraint firstItem="G9O-L1-Tcp" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="6po-V7-r8D"/>
                             <constraint firstItem="HSL-lF-XJB" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7xU-V1-Nb5"/>
                             <constraint firstItem="eEn-za-2wg" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="9Mi-yb-4sq"/>
+                            <constraint firstItem="zOW-Qz-hvL" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AIa-mC-eav"/>
                             <constraint firstItem="zOW-Qz-hvL" firstAttribute="centerX" secondItem="PUI-Ic-jCd" secondAttribute="centerX" type="default" id="Azj-wu-nyM"/>
-                            <constraint firstItem="zOW-Qz-hvL" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LWK-nU-X2b"/>
+                            <constraint firstItem="65y-3x-OyQ" firstAttribute="top" secondItem="eEn-za-2wg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BX1-Za-6kq"/>
+                            <constraint firstItem="65y-3x-OyQ" firstAttribute="top" secondItem="G9O-L1-Tcp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Gi0-D6-6sa"/>
                             <constraint firstItem="eEn-za-2wg" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="LsI-9j-hoh"/>
                             <constraint firstAttribute="trailing" secondItem="PUI-Ic-jCd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UNW-Qq-bLI"/>
                             <constraint firstAttribute="bottom" secondItem="HSL-lF-XJB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="VF5-L6-DJg"/>
@@ -113,11 +115,9 @@
                             <constraint firstItem="65y-3x-OyQ" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="i13-om-7Yj"/>
                             <constraint firstItem="PUI-Ic-jCd" firstAttribute="leading" secondItem="Tnm-fd-HxT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="iGC-hM-BuP"/>
                             <constraint firstItem="65y-3x-OyQ" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="jFi-pb-2qt"/>
-                            <constraint firstAttribute="bottom" secondItem="zOW-Qz-hvL" secondAttribute="bottom" constant="232" id="kvl-jq-e6m"/>
                             <constraint firstAttribute="bottom" secondItem="PUI-Ic-jCd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="luY-jv-bgp"/>
                             <constraint firstItem="Tnm-fd-HxT" firstAttribute="leading" secondItem="HSL-lF-XJB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="pWu-Be-efU"/>
                             <constraint firstAttribute="trailing" secondItem="zOW-Qz-hvL" secondAttribute="trailing" constant="7" id="reB-S3-fGK"/>
-                            <constraint firstItem="G9O-L1-Tcp" firstAttribute="bottom" secondItem="eEn-za-2wg" secondAttribute="bottom" type="default" id="v7H-Wd-Yei"/>
                         </constraints>
                     </view>
                     <connections>
@@ -132,9 +132,6 @@
         </scene>
     </scenes>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="PanelController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PanelController.h"/>
             <relationships>

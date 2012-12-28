@@ -10,6 +10,25 @@ class PanelController < UIViewController
   outlet :output_image_view
   outlet :table_view
 
+  # "Pine" rotate code
+  def preferredInterfaceOrientationForPresentation
+    UIDeviceOrientationPortrait
+  end
+
+
+  def supportedInterfaceOrientations
+    UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown
+  end
+
+  def shouldAutorotate
+    true
+  end
+
+  def shouldAutorotateToInterfaceOrientation(interface)
+    return interface == UIDeviceOrientationPortrait || interface == UIDeviceOrientationPortraitUpsideDown
+  end
+
+
   def viewWillAppear(animated)
     @filters = (1..11).collect { |i| "e#{i}" }
     super(animated)
@@ -33,8 +52,10 @@ class PanelController < UIViewController
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     filter = @filters[indexPath.row]
     image = image_view.image
-    new_image = image.send(filter.to_sym)
-    output_image_view.setImage new_image
+    if !(image == nil)
+      new_image = image.send(filter.to_sym)
+      output_image_view.setImage new_image
+    end
   end
 
   def saveImage(sender)
@@ -44,19 +65,25 @@ class PanelController < UIViewController
 
   def frontCamera(sender)
     BW::Device.camera.front.picture(media_types: [:movie, :image]) do |result|
-      image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+      if !(result[:original_image] == nil)
+        image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+      end
     end
   end
 
   def backCamera(sender)
     BW::Device.camera.rear.picture(media_types: [:movie, :image]) do |result|
-      image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+      if !(result[:original_image] == nil)
+        image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+      end
     end
   end
 
   def toLibrary(sender)
     BW::Device.camera.any.picture(media_types: [:movie, :image]) do |result|
-      image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+      if !(result[:original_image] == nil)
+        image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+      end
     end
   end
 
