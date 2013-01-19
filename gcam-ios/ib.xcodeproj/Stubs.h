@@ -72,6 +72,10 @@
 
 -(IBAction) frontCamera:(id) sender;
 -(IBAction) backCamera:(id) sender;
+-(IBAction) preferredInterfaceOrientationForPresentation;
+-(IBAction) supportedInterfaceOrientations;
+-(IBAction) shouldAutorotate;
+-(IBAction) shouldAutorotateToInterfaceOrientation:(id) interface;
 -(IBAction) viewWillAppear:(id) animated;
 -(IBAction) saveImage:(id) sender;
 -(IBAction) toLibrary:(id) sender;

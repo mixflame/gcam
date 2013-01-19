@@ -63,8 +63,14 @@ class PanelController < UIViewController
     UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
   end
 
+  # movie response:
+  # {
+  #       "media_type" = movie;
+  #       "media_url" = "file://localhost/private/var/mobile/Applications/C22EB92F-0CCB-464D-A687-529318BB2C5E/tmp/capture/capturedvideo.MOV";
+  #   }
+
   def frontCamera(sender)
-    BW::Device.camera.front.picture(media_types: [:movie, :image]) do |result|
+    BW::Device.camera.front.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
         image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
       end
@@ -72,7 +78,7 @@ class PanelController < UIViewController
   end
 
   def backCamera(sender)
-    BW::Device.camera.rear.picture(media_types: [:movie, :image]) do |result|
+    BW::Device.camera.rear.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
         image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
       end
@@ -80,7 +86,7 @@ class PanelController < UIViewController
   end
 
   def toLibrary(sender)
-    BW::Device.camera.any.picture(media_types: [:movie, :image]) do |result|
+    BW::Device.camera.any.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
         image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
       end

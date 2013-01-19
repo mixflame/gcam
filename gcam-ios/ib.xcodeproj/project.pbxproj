@@ -10,7 +10,7 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>069A19E56B3D4614913659D5</key>
+		<key>0F3D57F828B14ACB87EABC1E</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict/>
@@ -19,139 +19,39 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>072A4C7115CA4C4E8A0987EF</key>
+		<key>13663118190C476D979FCFAF</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>DEF3AA2C10244975BE1890BA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1EB1A5B0F68541E4BA9D6B2F</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict/>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>1F6B0C0E0B6646AE9929EEEF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>85A59ECF2EEE4A6DA0EABB43</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>20F1A2FAA51D47C5BE812A21</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DEF3AA2C10244975BE1890BA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>21D506339C6F446EB502C9B1</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>path</key>
-			<string>vendor/Pods/Headers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2B4DAFC4404D4AACBF9FEE93</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Stubs.h</string>
-			<key>path</key>
-			<string>ib.xcodeproj/Stubs.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>54DF5E20272C44A4A46BFF15</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E1945D137F9346379E239542</string>
-				<string>F3767C5B3B704FBBA5B15D2C</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>600605C09A4343A98C9BD3C2</key>
-		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0450</string>
+			</dict>
 			<key>buildConfigurationList</key>
-			<string>54DF5E20272C44A4A46BFF15</string>
-			<key>buildPhases</key>
+			<string>DDA71C6A7B514DC582D234AD</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
 			<array>
-				<string>9984712A0ECC454D88BF4DD7</string>
-				<string>86AA521A76DA4D48B3866D91</string>
+				<string>en</string>
 			</array>
-			<key>buildRules</key>
+			<key>mainGroup</key>
+			<string>B7A2626B894744DDACF255E6</string>
+			<key>productRefGroup</key>
+			<string>B261CD779EB1475BA6B5D4D1</string>
+			<key>projectReferences</key>
 			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>ib</string>
-			<key>productName</key>
-			<string>ib</string>
-			<key>productReference</key>
-			<string>E3229509170749468F9E3D70</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>767DC0563CEC4787B9D61DBA</key>
-		<dict>
-			<key>children</key>
+			<key>targets</key>
 			<array>
-				<string>E3229509170749468F9E3D70</string>
+				<string>4EC18CD0E419498F9E5D2812</string>
 			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
-		<key>78FBB1B8DA2D4C05BA229E68</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>gcam.storyboard</string>
-			<key>path</key>
-			<string>resources/gcam.storyboard</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>85A59ECF2EEE4A6DA0EABB43</key>
+		<key>2A26CB97743C491C8402FA06</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -166,64 +66,44 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>86AA521A76DA4D48B3866D91</key>
+		<key>2FBB99B62667457A9A8700F7</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>20F1A2FAA51D47C5BE812A21</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>9984712A0ECC454D88BF4DD7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>1F6B0C0E0B6646AE9929EEEF</string>
+				<string>861DAEE5FCDC4554B0355712</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>B925506CC79040A08B3B9C35</key>
+		<key>4EC18CD0E419498F9E5D2812</key>
 		<dict>
-			<key>children</key>
+			<key>buildConfigurationList</key>
+			<string>903AE2262F604FE8B761D546</string>
+			<key>buildPhases</key>
 			<array>
-				<string>2B4DAFC4404D4AACBF9FEE93</string>
-				<string>85A59ECF2EEE4A6DA0EABB43</string>
+				<string>2FBB99B62667457A9A8700F7</string>
+				<string>8381632385454E3C9962EF85</string>
 			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXNativeTarget</string>
 			<key>name</key>
-			<string>Supporting Files</string>
-			<key>path</key>
-			<string>ib.xcodeproj</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>ib</string>
+			<key>productName</key>
+			<string>ib</string>
+			<key>productReference</key>
+			<string>B080FA1F89F547FCBAC5B824</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
 		</dict>
-		<key>DEF3AA2C10244975BE1890BA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>E1945D137F9346379E239542</key>
+		<key>5DC27A39FD2744E49C90824E</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -263,39 +143,111 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>E220CC60C3624AFEB425DD2B</key>
+		<key>76499A4206114C8D9DA1FD6F</key>
 		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0450</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>F4D6876EE0A34E22A66C2775</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
+			<key>children</key>
+			<array>
+				<string>7A1FD5A6537C4F1F80D6196D</string>
+				<string>2A26CB97743C491C8402FA06</string>
+			</array>
 			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>EF31C7A797584E23918A0B4C</string>
-			<key>productRefGroup</key>
-			<string>767DC0563CEC4787B9D61DBA</string>
-			<key>projectReferences</key>
-			<array/>
-			<key>targets</key>
-			<array>
-				<string>600605C09A4343A98C9BD3C2</string>
-			</array>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>path</key>
+			<string>ib.xcodeproj</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E3229509170749468F9E3D70</key>
+		<key>7A1FD5A6537C4F1F80D6196D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Stubs.h</string>
+			<key>path</key>
+			<string>ib.xcodeproj/Stubs.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8381632385454E3C9962EF85</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CEB8E7A8371D455691C2E0F3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>861DAEE5FCDC4554B0355712</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2A26CB97743C491C8402FA06</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>885FE4AF3176404B818CCAF2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>8EB0724B807D43979316C590</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>path</key>
+			<string>vendor/Pods/Headers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>903AE2262F604FE8B761D546</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>5DC27A39FD2744E49C90824E</string>
+				<string>D729DC57191B4B54A785034A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A58EF729234C4451A3E5C9F0</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict/>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B080FA1F89F547FCBAC5B824</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -310,22 +262,57 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>EF31C7A797584E23918A0B4C</key>
+		<key>B261CD779EB1475BA6B5D4D1</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>767DC0563CEC4787B9D61DBA</string>
-				<string>072A4C7115CA4C4E8A0987EF</string>
-				<string>F41FF33AF1004130B77D635B</string>
-				<string>B925506CC79040A08B3B9C35</string>
-				<string>21D506339C6F446EB502C9B1</string>
+				<string>B080FA1F89F547FCBAC5B824</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B7A2626B894744DDACF255E6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B261CD779EB1475BA6B5D4D1</string>
+				<string>BC5D1DF4070D4195A0F4615D</string>
+				<string>FFA8C0014F6D454DBF1C3532</string>
+				<string>76499A4206114C8D9DA1FD6F</string>
+				<string>8EB0724B807D43979316C590</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F3767C5B3B704FBBA5B15D2C</key>
+		<key>BC5D1DF4070D4195A0F4615D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>885FE4AF3176404B818CCAF2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CEB8E7A8371D455691C2E0F3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>885FE4AF3176404B818CCAF2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>D729DC57191B4B54A785034A</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -374,11 +361,38 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>F41FF33AF1004130B77D635B</key>
+		<key>DAB7D312FE1E4223AA42B427</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>gcam.storyboard</string>
+			<key>path</key>
+			<string>resources/gcam.storyboard</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DDA71C6A7B514DC582D234AD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>0F3D57F828B14ACB87EABC1E</string>
+				<string>A58EF729234C4451A3E5C9F0</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FFA8C0014F6D454DBF1C3532</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>78FBB1B8DA2D4C05BA229E68</string>
+				<string>DAB7D312FE1E4223AA42B427</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -389,22 +403,8 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F4D6876EE0A34E22A66C2775</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>069A19E56B3D4614913659D5</string>
-				<string>1EB1A5B0F68541E4BA9D6B2F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
 	</dict>
 	<key>rootObject</key>
-	<string>E220CC60C3624AFEB425DD2B</string>
+	<string>13663118190C476D979FCFAF</string>
 </dict>
 </plist>

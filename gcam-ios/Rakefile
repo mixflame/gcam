@@ -23,7 +23,10 @@ Bundler.require(:RubyMotion)
 Motion::Project::App.setup do |app|
   app.name = 'GCAM'
 
-  app.device_family = [:ipad, :iphone]
+  app.device_family = [:iphone]
+
+  # :ipad,
+
   app.interface_orientations = [:portrait]
 
   # , :landscape_right, :landscape_left
