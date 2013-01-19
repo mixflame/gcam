@@ -6,30 +6,15 @@ require 'bundler'
 Bundler.require(:RubyMotion)
 
 # GCAM
-# Working name: InstaMotion/Bomb
 # Ruby Camera FX App
 # Fix Rotation
 
-# # Uses the front camera
-# BW::Device.camera.front.picture(media_types: [:movie, :image]) do |result|
-#   image_view = UIImageView.alloc.initWithImage(result[:original_image])
-# end
-
-# # Uses the rear camera
-# BW::Device.camera.rear.picture(media_types: [:movie, :image]) do |result|
-#   image_view = UIImageView.alloc.initWithImage(result[:original_image])
-# end
-
 Motion::Project::App.setup do |app|
-  app.name = 'GCAM'
+  app.name = 'GCam'
 
   app.device_family = [:iphone]
 
-  # :ipad,
-
   app.interface_orientations = [:portrait]
-
-  # , :landscape_right, :landscape_left
 
   app.deployment_target = '5.1'
 

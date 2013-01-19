@@ -13,11 +13,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSL-lF-XJB">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="jgF-az-Ie7"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Cam (Front)">
+                                <state key="normal" title="Front Cam">
                                     <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -36,10 +33,10 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnm-fd-HxT">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="D1F-rc-nAN"/>
+                                    <constraint firstAttribute="height" constant="47" id="vAR-FY-eoe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Cam (Back)">
+                                <state key="normal" title="Back Cam">
                                     <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -52,7 +49,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUI-Ic-jCd">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Library">
+                                <state key="normal" title="Photo Album">
                                     <color key="titleColor" red="1" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -67,6 +64,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="151" id="Wq4-uf-59m"/>
+                                    <constraint firstAttribute="width" constant="320" id="ktc-gN-slI"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="c1b-D6-9bv" id="bfR-Qh-DoP"/>
@@ -75,7 +73,7 @@
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-L1-Tcp">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="158" id="w2z-dZ-gbK"/>
+                                    <constraint firstAttribute="width" constant="158" id="bR8-on-ZYS"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOW-Qz-hvL">
@@ -101,23 +99,24 @@
                             <constraint firstItem="G9O-L1-Tcp" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="6po-V7-r8D"/>
                             <constraint firstItem="HSL-lF-XJB" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7xU-V1-Nb5"/>
                             <constraint firstItem="eEn-za-2wg" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="9Mi-yb-4sq"/>
-                            <constraint firstItem="zOW-Qz-hvL" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AIa-mC-eav"/>
-                            <constraint firstItem="zOW-Qz-hvL" firstAttribute="centerX" secondItem="PUI-Ic-jCd" secondAttribute="centerX" type="default" id="Azj-wu-nyM"/>
-                            <constraint firstItem="65y-3x-OyQ" firstAttribute="top" secondItem="eEn-za-2wg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BX1-Za-6kq"/>
-                            <constraint firstItem="65y-3x-OyQ" firstAttribute="top" secondItem="G9O-L1-Tcp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Gi0-D6-6sa"/>
+                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="leading" secondItem="HSL-lF-XJB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Jth-4V-IcV"/>
                             <constraint firstItem="eEn-za-2wg" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="LsI-9j-hoh"/>
-                            <constraint firstAttribute="trailing" secondItem="PUI-Ic-jCd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UNW-Qq-bLI"/>
+                            <constraint firstItem="65y-3x-OyQ" firstAttribute="trailing" secondItem="PUI-Ic-jCd" secondAttribute="trailing" type="default" id="M2J-qD-y1N"/>
+                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="leading" secondItem="Tnm-fd-HxT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Sfm-sU-ZsY"/>
                             <constraint firstAttribute="bottom" secondItem="HSL-lF-XJB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="VF5-L6-DJg"/>
-                            <constraint firstItem="HSL-lF-XJB" firstAttribute="top" secondItem="Tnm-fd-HxT" secondAttribute="top" type="default" id="XxN-qa-8Tu"/>
+                            <constraint firstItem="65y-3x-OyQ" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" constant="-7" id="WEZ-D2-rN4"/>
+                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="leading" secondItem="zOW-Qz-hvL" secondAttribute="leading" type="default" id="XNJ-Wt-lTx"/>
                             <constraint firstAttribute="bottom" secondItem="Tnm-fd-HxT" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ydj-Og-DNm"/>
-                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="top" secondItem="Tnm-fd-HxT" secondAttribute="top" type="default" id="da7-Pv-9Xf"/>
+                            <constraint firstItem="HSL-lF-XJB" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d5Z-eI-lzu"/>
+                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dpj-qf-VhO"/>
                             <constraint firstItem="G9O-L1-Tcp" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="eDT-Im-J4t"/>
-                            <constraint firstItem="65y-3x-OyQ" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="i13-om-7Yj"/>
-                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="leading" secondItem="Tnm-fd-HxT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="iGC-hM-BuP"/>
-                            <constraint firstItem="65y-3x-OyQ" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="jFi-pb-2qt"/>
+                            <constraint firstItem="zOW-Qz-hvL" firstAttribute="top" secondItem="G9O-L1-Tcp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gLJ-wx-Y9s"/>
+                            <constraint firstItem="G9O-L1-Tcp" firstAttribute="bottom" secondItem="eEn-za-2wg" secondAttribute="bottom" type="default" id="jgI-MN-2lH"/>
                             <constraint firstAttribute="bottom" secondItem="PUI-Ic-jCd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="luY-jv-bgp"/>
-                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="leading" secondItem="HSL-lF-XJB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="pWu-Be-efU"/>
-                            <constraint firstAttribute="trailing" secondItem="zOW-Qz-hvL" secondAttribute="trailing" constant="7" id="reB-S3-fGK"/>
+                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n1R-9v-uu2"/>
+                            <constraint firstItem="zOW-Qz-hvL" firstAttribute="trailing" secondItem="65y-3x-OyQ" secondAttribute="trailing" type="default" id="oD4-oD-YAW"/>
+                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" constant="115" id="ovB-IR-JZ2"/>
+                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="centerX" secondItem="jhj-lk-Yfg" secondAttribute="centerX" type="default" id="qqe-oz-dQT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -137,7 +136,11 @@
             <relationships>
                 <relationship kind="action" name="backCamera:"/>
                 <relationship kind="action" name="frontCamera:"/>
+                <relationship kind="action" name="preferredInterfaceOrientationForPresentation"/>
                 <relationship kind="action" name="saveImage:"/>
+                <relationship kind="action" name="shouldAutorotate"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="supportedInterfaceOrientations"/>
                 <relationship kind="action" name="toLibrary:"/>
                 <relationship kind="action" name="viewWillAppear:"/>
                 <relationship kind="outlet" name="image_view"/>

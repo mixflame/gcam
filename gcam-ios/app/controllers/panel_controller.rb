@@ -63,6 +63,10 @@ class PanelController < UIViewController
     UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
   end
 
+  def applyFilter(sender)
+    image_view.setImage output_image_view.image
+  end
+
   # movie response:
   # {
   #       "media_type" = movie;
