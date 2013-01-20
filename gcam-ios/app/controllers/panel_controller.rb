@@ -10,7 +10,10 @@ class PanelController < UIViewController
   outlet :output_image_view
   outlet :table_view
 
-  # "Pine" rotate code
+  # API
+
+  # Pine rotate
+
   def preferredInterfaceOrientationForPresentation
     UIDeviceOrientationPortrait
   end
@@ -28,6 +31,7 @@ class PanelController < UIViewController
     return interface == UIDeviceOrientationPortrait || interface == UIDeviceOrientationPortraitUpsideDown
   end
 
+  # delegate methods
 
   def viewWillAppear(animated)
     @filters = (1..11).collect { |i| "e#{i}" }
@@ -58,6 +62,8 @@ class PanelController < UIViewController
     end
   end
 
+  # picture function
+
   def saveImage(sender)
     imageToSave = output_image_view.image
     UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
@@ -67,16 +73,13 @@ class PanelController < UIViewController
     image_view.setImage output_image_view.image
   end
 
-  # movie response:
-  # {
-  #       "media_type" = movie;
-  #       "media_url" = "file://localhost/private/var/mobile/Applications/C22EB92F-0CCB-464D-A687-529318BB2C5E/tmp/capture/capturedvideo.MOV";
-  #   }
+  # picture takers
 
   def frontCamera(sender)
     BW::Device.camera.front.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+        p result[:original_image]
+        image_view.setImage result[:original_image].scaleToSize CGSize.new(640, 480)
       end
     end
   end
