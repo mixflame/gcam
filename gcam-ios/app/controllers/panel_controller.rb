@@ -67,10 +67,12 @@ class PanelController < UIViewController
   def saveImage(sender)
     imageToSave = output_image_view.image
     UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+    BubbleWrap::App.alert "Image saved!"
   end
 
   def applyFilter(sender)
     image_view.setImage output_image_view.image
+    BubbleWrap::App.alert "Image changed to filtered."
   end
 
   # picture takers
@@ -87,7 +89,7 @@ class PanelController < UIViewController
   def backCamera(sender)
     BW::Device.camera.rear.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+        image_view.setImage result[:original_image].scaleToSize CGSize.new(640, 480)
       end
     end
   end
@@ -95,7 +97,7 @@ class PanelController < UIViewController
   def toLibrary(sender)
     BW::Device.camera.any.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.setImage result[:original_image].scaleToSize CGSize.new(320, 320)
+        image_view.setImage result[:original_image].scaleToSize CGSize.new(640, 480)
       end
     end
   end
