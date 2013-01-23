@@ -10,6 +10,18 @@ Bundler.require(:RubyMotion)
 # Fix Rotation
 
 Motion::Project::App.setup do |app|
+
+  app.identifier = 'com.jonsoft.gcam'
+  app.info_plist['CFBundleShortVersionString'] = "1.0.0"
+  app.short_version = "1.0"
+  app.version       = "1.0"
+
+  app.provisioning_profile = "/Users/jsilverman2/Library/MobileDevice/Provisioning Profiles/60F7EEB6-6E11-4713-9039-839CDBB930D4.mobileprovision"
+  app.codesign_certificate = "iPhone Distribution: Jonathan Silverman"
+
+  app.icons = ['Icon.png', 'Icon-72.png', 'Icon@2x.png', 'Icon-72@2x.png']
+  app.prerendered_icon = true
+
   app.name = 'GCam'
 
   app.device_family = [:iphone]
@@ -29,4 +41,16 @@ Motion::Project::App.setup do |app|
   app.frameworks << 'CoreVideo'
   app.frameworks << 'CoreMedia'
   app.frameworks << 'AVFoundation'
+
+  {
+    'DTSDKName'         => 'iphoneos6.0',
+    'DTPlatformVersion' => '6.0',
+    'DTXcode'           => '0450',
+    'DTSDKBuild'        => '10A403',
+    'DTXcodeBuild'      => '4G182',
+    'DTPlatformBuild'   => '10A403'
+  }.each do |k, v|
+    app.info_plist[k] = v
+  end
+
 end
