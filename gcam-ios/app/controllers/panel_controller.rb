@@ -55,14 +55,18 @@ class PanelController < UIViewController
   end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    filter = @filters[indexPath.row]
-    image = image_view.image
-    if !(image == nil)
-      if filter.include?("e")
-        new_image = image.send(filter.to_sym)
-        output_image_view.setImage new_image
-      elsif filter.include?("g")
-        apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
+    Thread.new do
+      filter = @filters[indexPath.row]
+      image = image_view.image
+      if !(image == nil)
+        new_image =
+        if filter.include?("e")
+          new_image = image.send(filter.to_sym)
+        elsif filter.include?("g")
+          apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
+        end
+        rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
+        output_image_view.image = rotatedImage
       end
     end
   end
@@ -103,7 +107,7 @@ class PanelController < UIViewController
       selectedFilter = GPUImageFilter.new
     end
     filteredImage = selectedFilter.imageByFilteringImage(image_view.image)
-    output_image_view.setImage filteredImage
+    filteredImage
   end
 
   # picture takers
@@ -119,7 +123,7 @@ class PanelController < UIViewController
   def backCamera(sender)
     BW::Device.camera.rear.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.setImage result[:original_image] #.scaleToSize CGSize.new(640, 480)
+        image_view.image = result[:original_image] #.scaleToSize CGSize.new(640, 480)
       end
     end
   end
@@ -127,7 +131,7 @@ class PanelController < UIViewController
   def toLibrary(sender)
     BW::Device.camera.any.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.setImage result[:original_image] #.scaleToSize CGSize.new(640, 480)
+        image_view.image = result[:original_image] #.scaleToSize CGSize.new(640, 480)
       end
     end
   end
