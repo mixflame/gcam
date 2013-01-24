@@ -35,6 +35,7 @@ class PanelController < UIViewController
 
   def viewWillAppear(animated)
     @filters = (1..11).collect { |i| "e#{i}" }
+    @filters += (1..7).collect { |i| "g#{i}" }
     super(animated)
   end
 
@@ -57,8 +58,12 @@ class PanelController < UIViewController
     filter = @filters[indexPath.row]
     image = image_view.image
     if !(image == nil)
-      new_image = image.send(filter.to_sym)
-      output_image_view.setImage new_image
+      if filter.include?("e")
+        new_image = image.send(filter.to_sym)
+        output_image_view.setImage new_image
+      elsif filter.include?("g")
+        apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
+      end
     end
   end
 
@@ -75,13 +80,38 @@ class PanelController < UIViewController
     BubbleWrap::App.alert "Image changed to filtered."
   end
 
+  #GPUImage
+
+  def apply_gpuimage_filter(buttonIndex)
+    selectedFilter = GPUImageFilter
+    case (buttonIndex)
+    when 0
+      selectedFilter = GPUImageGrayscaleFilter.new
+    when 1
+      selectedFilter = GPUImageSepiaFilter.new
+    when 2
+      selectedFilter = GPUImageSketchFilter.new
+    when 3
+      selectedFilter = GPUImagePixellateFilter.new
+    when 4
+      selectedFilter = GPUImageColorInvertFilter.new
+    when 5
+      selectedFilter = GPUImageToonFilter.new
+    when 6
+      selectedFilter = GPUImagePinchDistortionFilter.new
+    when 7
+      selectedFilter = GPUImageFilter.new
+    end
+    filteredImage = selectedFilter.imageByFilteringImage(image_view.image)
+    output_image_view.setImage filteredImage
+  end
+
   # picture takers
 
   def frontCamera(sender)
     BW::Device.camera.front.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        p result[:original_image]
-        image_view.setImage result[:original_image].scaleToSize CGSize.new(640, 480)
+        image_view.image = result[:original_image] #.scaleToSize CGSize.new(640, 480)
       end
     end
   end
@@ -89,7 +119,7 @@ class PanelController < UIViewController
   def backCamera(sender)
     BW::Device.camera.rear.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.setImage result[:original_image].scaleToSize CGSize.new(640, 480)
+        image_view.setImage result[:original_image] #.scaleToSize CGSize.new(640, 480)
       end
     end
   end
@@ -97,7 +127,7 @@ class PanelController < UIViewController
   def toLibrary(sender)
     BW::Device.camera.any.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.setImage result[:original_image].scaleToSize CGSize.new(640, 480)
+        image_view.setImage result[:original_image] #.scaleToSize CGSize.new(640, 480)
       end
     end
   end

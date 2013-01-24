@@ -79,6 +79,8 @@
 -(IBAction) viewWillAppear:(id) animated;
 -(IBAction) saveImage:(id) sender;
 -(IBAction) applyFilter:(id) sender;
+-(IBAction) pixellate:(id) sender;
+-(IBAction) apply_gpuimage_filter:(id) buttonIndex;
 -(IBAction) toLibrary:(id) sender;
 
 @end
