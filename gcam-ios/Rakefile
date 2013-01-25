@@ -19,7 +19,7 @@ Motion::Project::App.setup do |app|
   # app.provisioning_profile = "/Users/jsilverman2/Library/MobileDevice/Provisioning Profiles/60F7EEB6-6E11-4713-9039-839CDBB930D4.mobileprovision"
   # app.codesign_certificate = "iPhone Distribution: Jonathan Silverman"
 
-  app.icons = ['Icon.png', 'Icon-72.png', 'Icon@2x.png', 'Icon-72@2x.png']
+  app.icons = ['icon_iphone.png', 'icon_ipad.png', 'icon_iphone_retina.png', 'icon_ipad_retina.png']
   app.prerendered_icon = true
 
   app.name = 'GCam'
