@@ -55,19 +55,17 @@ class PanelController < UIViewController
   end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    Thread.new do
-      filter = @filters[indexPath.row]
-      image = image_view.image
-      if !(image == nil)
-        new_image =
-        if filter.include?("e")
-          new_image = image.send(filter.to_sym)
-        elsif filter.include?("g")
-          apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
-        end
-        rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
-        output_image_view.image = rotatedImage
+    filter = @filters[indexPath.row]
+    image = image_view.image
+    if !(image == nil)
+      new_image =
+      if filter.include?("e")
+        new_image = image.send(filter.to_sym)
+      elsif filter.include?("g")
+        apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
       end
+      rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
+      output_image_view.image = rotatedImage
     end
   end
 
@@ -80,8 +78,13 @@ class PanelController < UIViewController
   end
 
   def applyFilter(sender)
-    image_view.setImage output_image_view.image
+    image_view.image = output_image_view.image
     BubbleWrap::App.alert "Image changed to filtered."
+  end
+
+  def revert(sender)
+    output_image_view.image = image_view.image
+    BubbleWrap::App.alert "Image changed to unfiltered."
   end
 
   #GPUImage

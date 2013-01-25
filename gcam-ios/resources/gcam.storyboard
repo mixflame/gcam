@@ -110,13 +110,31 @@
                                     <action selector="applyFilter:" destination="c1b-D6-9bv" eventType="touchUpInside" id="jfN-F5-YDk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJn-ku-H8H">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="TLT-6o-tgv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Revert">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="revert:" destination="c1b-D6-9bv" eventType="touchUpInside" id="vBw-A2-guh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G9O-L1-Tcp" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="6po-V7-r8D"/>
                             <constraint firstItem="HSL-lF-XJB" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7xU-V1-Nb5"/>
                             <constraint firstItem="eEn-za-2wg" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="9Mi-yb-4sq"/>
-                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="baseline" secondItem="HSL-lF-XJB" secondAttribute="baseline" type="default" id="IVI-Xd-iGd"/>
+                            <constraint firstItem="HSL-lF-XJB" firstAttribute="baseline" secondItem="PUI-Ic-jCd" secondAttribute="baseline" type="default" id="ABL-dH-Q25"/>
+                            <constraint firstItem="zOW-Qz-hvL" firstAttribute="baseline" secondItem="fJn-ku-H8H" secondAttribute="baseline" type="default" id="C1M-AP-vgo"/>
+                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="baseline" secondItem="PUI-Ic-jCd" secondAttribute="baseline" type="default" id="Eub-Zy-C7j"/>
                             <constraint firstItem="Tnm-fd-HxT" firstAttribute="leading" secondItem="HSL-lF-XJB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Jth-4V-IcV"/>
                             <constraint firstItem="eEn-za-2wg" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="LsI-9j-hoh"/>
                             <constraint firstItem="65y-3x-OyQ" firstAttribute="trailing" secondItem="PUI-Ic-jCd" secondAttribute="trailing" type="default" id="M2J-qD-y1N"/>
@@ -129,14 +147,15 @@
                             <constraint firstItem="HSL-lF-XJB" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d5Z-eI-lzu"/>
                             <constraint firstItem="Tnm-fd-HxT" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dpj-qf-VhO"/>
                             <constraint firstItem="G9O-L1-Tcp" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="eDT-Im-J4t"/>
-                            <constraint firstItem="Tnm-fd-HxT" firstAttribute="baseline" secondItem="PUI-Ic-jCd" secondAttribute="baseline" type="default" id="fjU-TD-8dG"/>
                             <constraint firstItem="zOW-Qz-hvL" firstAttribute="top" secondItem="G9O-L1-Tcp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gLJ-wx-Y9s"/>
+                            <constraint firstItem="fJn-ku-H8H" firstAttribute="baseline" secondItem="0EN-DM-A3X" secondAttribute="baseline" type="default" id="geY-VF-pKo"/>
                             <constraint firstItem="G9O-L1-Tcp" firstAttribute="bottom" secondItem="eEn-za-2wg" secondAttribute="bottom" type="default" id="jgI-MN-2lH"/>
                             <constraint firstAttribute="bottom" secondItem="PUI-Ic-jCd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="luY-jv-bgp"/>
                             <constraint firstItem="PUI-Ic-jCd" firstAttribute="top" secondItem="65y-3x-OyQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n1R-9v-uu2"/>
+                            <constraint firstItem="0EN-DM-A3X" firstAttribute="leading" secondItem="fJn-ku-H8H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nc7-hU-FN7"/>
                             <constraint firstItem="zOW-Qz-hvL" firstAttribute="trailing" secondItem="65y-3x-OyQ" secondAttribute="trailing" type="default" id="oD4-oD-YAW"/>
                             <constraint firstItem="Tnm-fd-HxT" firstAttribute="centerX" secondItem="jhj-lk-Yfg" secondAttribute="centerX" type="default" id="qqe-oz-dQT"/>
-                            <constraint firstItem="PUI-Ic-jCd" firstAttribute="baseline" secondItem="HSL-lF-XJB" secondAttribute="baseline" type="default" id="qza-mS-73c"/>
+                            <constraint firstItem="HSL-lF-XJB" firstAttribute="baseline" secondItem="Tnm-fd-HxT" secondAttribute="baseline" type="default" id="sml-4N-Eal"/>
                         </constraints>
                     </view>
                     <connections>
@@ -151,13 +170,18 @@
         </scene>
     </scenes>
     <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="PanelController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PanelController.h"/>
             <relationships>
                 <relationship kind="action" name="applyFilter:"/>
+                <relationship kind="action" name="apply_gpuimage_filter:"/>
                 <relationship kind="action" name="backCamera:"/>
                 <relationship kind="action" name="frontCamera:"/>
                 <relationship kind="action" name="preferredInterfaceOrientationForPresentation"/>
+                <relationship kind="action" name="revert:"/>
                 <relationship kind="action" name="saveImage:"/>
                 <relationship kind="action" name="shouldAutorotate"/>
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
