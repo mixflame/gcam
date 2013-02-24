@@ -57,15 +57,17 @@ class PanelController < UIViewController
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     filter = @filters[indexPath.row]
     image = image_view.image
-    if !(image == nil)
-      new_image =
-      if filter.include?("e")
-        new_image = image.send(filter.to_sym)
-      elsif filter.include?("g")
-        apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
+    $queue.async do
+      if !(image == nil)
+        new_image =
+        if filter.include?("e")
+          new_image = image.send(filter.to_sym)
+        elsif filter.include?("g")
+          apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
+        end
+        rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
+        output_image_view.image = rotatedImage
       end
-      rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
-      output_image_view.image = rotatedImage
     end
   end
 
@@ -73,18 +75,26 @@ class PanelController < UIViewController
 
   def saveImage(sender)
     imageToSave = output_image_view.image
-    UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
-    BubbleWrap::App.alert "Image saved!"
+    if imageToSave != nil
+      UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+      BubbleWrap::App.alert "Saved filtered image."
+    end
   end
 
   def applyFilter(sender)
-    image_view.image = output_image_view.image
-    BubbleWrap::App.alert "Image changed to filtered."
+    filtered = output_image_view.image
+    if filtered != nil
+      image_view.image = filtered
+      BubbleWrap::App.alert "Original image changed to filtered."
+    end
   end
 
-  def revert(sender)
-    output_image_view.image = image_view.image
-    BubbleWrap::App.alert "Image changed to unfiltered."
+  def saveUnfiltered(sender)
+    imageToSave = image_view.image
+    if imageToSave != nil
+      UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+      BubbleWrap::App.alert "Original image saved."
+    end
   end
 
   #GPUImage

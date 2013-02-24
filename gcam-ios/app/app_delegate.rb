@@ -2,7 +2,7 @@ class AppDelegate
   attr_accessor :window
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    $queue = Dispatch::Queue.new('com.jonsoft.globalchat')
+    $queue = Dispatch::Queue.new('com.jonsoft.gcam-ios')
 
     UIApplication.sharedApplication.setStatusBarHidden(true, animated:false)
 
