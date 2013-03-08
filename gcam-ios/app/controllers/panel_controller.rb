@@ -57,17 +57,15 @@ class PanelController < UIViewController
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     filter = @filters[indexPath.row]
     image = image_view.image
-    $queue.async do
-      if !(image == nil)
-        new_image =
-        if filter.include?("e")
-          new_image = image.send(filter.to_sym)
-        elsif filter.include?("g")
-          apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
-        end
-        rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
-        output_image_view.image = rotatedImage
+    if !(image == nil)
+      new_image =
+      if filter.include?("e")
+        new_image = image.performSelector(filter.to_sym)
+      elsif filter.include?("g")
+        apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
       end
+      rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
+      output_image_view.image = rotatedImage
     end
   end
 
