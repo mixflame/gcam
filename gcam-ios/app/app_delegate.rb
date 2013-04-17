@@ -1,5 +1,10 @@
 class AppDelegate
-  attr_accessor :window
+  extend IB
+
+  outlet :window, UIWindow
+  outlet :main_image, UIImage
+
+  #attr_accessor :window, :main_image
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     $queue = Dispatch::Queue.new('com.jonsoft.gcam-ios')
@@ -8,7 +13,7 @@ class AppDelegate
 
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
-    switch_to_vc(load_vc("Panel"))
+    switch_to_vc(load_vc("TabView"))
     true
   end
 

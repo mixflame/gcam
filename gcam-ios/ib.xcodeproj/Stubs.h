@@ -62,26 +62,35 @@
 @end
 
 
+@interface FilterController : UIViewController
+
+@property IBOutlet id image_view;
+
+
+
+-(IBAction) Use:(id) sender;
+-(IBAction) preferredInterfaceOrientationForPresentation;
+-(IBAction) supportedInterfaceOrientations;
+-(IBAction) shouldAutorotate;
+-(IBAction) shouldAutorotateToInterfaceOrientation:(id) interface;
+-(IBAction) viewWillAppear:(id) animated;
+
+@end
+
+
 @interface PanelController : UIViewController
 
 @property IBOutlet id image_view;
-@property IBOutlet id output_image_view;
-@property IBOutlet id table_view;
 
 
 
 -(IBAction) frontCamera:(id) sender;
--(IBAction) backCamera:(id) sender;
 -(IBAction) preferredInterfaceOrientationForPresentation;
 -(IBAction) supportedInterfaceOrientations;
 -(IBAction) shouldAutorotate;
 -(IBAction) shouldAutorotateToInterfaceOrientation:(id) interface;
 -(IBAction) viewWillAppear:(id) animated;
 -(IBAction) saveImage:(id) sender;
--(IBAction) applyFilter:(id) sender;
--(IBAction) saveUnfiltered:(id) sender;
--(IBAction) apply_gpuimage_filter:(id) buttonIndex;
--(IBAction) toLibrary:(id) sender;
 
 @end
 

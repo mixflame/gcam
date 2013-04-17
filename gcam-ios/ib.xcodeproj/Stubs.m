@@ -28,6 +28,11 @@
 @end
 
 
+@implementation FilterController
+
+@end
+
+
 @implementation PanelController
 
 @end
