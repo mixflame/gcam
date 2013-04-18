@@ -33,6 +33,7 @@ class PanelController < UIViewController
   def viewWillAppear(animated)
     # @filters = (1..11).collect { |i| "e#{i}" }
     # @filters += (1..7).collect { |i| "g#{i}" }
+    NSLog "panel view will appear"
     super(animated)
   end
 
@@ -76,36 +77,13 @@ class PanelController < UIViewController
 
   #GPUImage
 
-  # def apply_gpuimage_filter(buttonIndex)
-  #   selectedFilter = GPUImageFilter
-  #   case (buttonIndex)
-  #   when 0
-  #     selectedFilter = GPUImageGrayscaleFilter.new
-  #   when 1
-  #     selectedFilter = GPUImageSepiaFilter.new
-  #   when 2
-  #     selectedFilter = GPUImageSketchFilter.new
-  #   when 3
-  #     selectedFilter = GPUImagePixellateFilter.new
-  #   when 4
-  #     selectedFilter = GPUImageColorInvertFilter.new
-  #   when 5
-  #     selectedFilter = GPUImageToonFilter.new
-  #   when 6
-  #     selectedFilter = GPUImagePinchDistortionFilter.new
-  #   when 7
-  #     selectedFilter = GPUImageFilter.new
-  #   end
-  #   filteredImage = selectedFilter.imageByFilteringImage(image_view.image)
-  #   filteredImage
-  # end
-
   # picture takers
 
   def frontCamera(sender)
     BW::Device.camera.front.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.image = result[:original_image] #.scaleToSize CGSize.new(640, 480)
+        image_view.image = result[:original_image].scaleToSize CGSize.new(image_view.frame.size.width, image_view.frame.size.height)
+        $app.main_image = image_view.image
       end
     end
   end

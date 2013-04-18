@@ -1,12 +1,9 @@
 class AppDelegate
-  extend IB
 
-  outlet :window, UIWindow
-  outlet :main_image, UIImage
-
-  #attr_accessor :window, :main_image
+  attr_accessor :window, :main_image
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+    $app = self
     $queue = Dispatch::Queue.new('com.jonsoft.gcam-ios')
 
     UIApplication.sharedApplication.setStatusBarHidden(true, animated:false)

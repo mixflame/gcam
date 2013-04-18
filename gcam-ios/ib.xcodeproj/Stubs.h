@@ -64,7 +64,7 @@
 
 @interface FilterController : UIViewController
 
-@property IBOutlet id image_view;
+@property IBOutlet UICollectionView * collection_view;
 
 
 
@@ -73,7 +73,10 @@
 -(IBAction) supportedInterfaceOrientations;
 -(IBAction) shouldAutorotate;
 -(IBAction) shouldAutorotateToInterfaceOrientation:(id) interface;
+-(IBAction) apply_gpuimage_filter:(id) buttonIndex;
 -(IBAction) viewWillAppear:(id) animated;
+-(IBAction) runFilters:(id) sender;
+-(IBAction) numberOfSectionsInCollectionView:(id) collectionView;
 
 @end
 

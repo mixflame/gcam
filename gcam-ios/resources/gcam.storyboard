@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYo-lG-u8I"/>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="uFb-gG-dyt">
+                            <toolbar opaque="NO" autoresizesSubviews="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="uFb-gG-dyt">
                                 <items>
                                     <barButtonItem title="Cam" id="awY-eM-b39">
                                         <connections>
@@ -77,32 +77,46 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="5Rw-Ad-LOY">
                                 <items>
+                                    <barButtonItem title="Run Filters" id="EVr-J1-Eeo">
+                                        <connections>
+                                            <action selector="runFilters:" destination="5xl-bE-5H7" id="dB7-Ml-ubk"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Use" id="hmT-bn-WlK"/>
                                 </items>
                             </toolbar>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BOJ-0b-tRC">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="oCr-rE-X2C"/>
-                                    <constraint firstAttribute="width" constant="160" id="zYv-At-ebX"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JTp-qv-rgO">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Eu-0S-LKF">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0Eu-0S-LKF">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="742-zY-w59">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="455" id="8v2-cp-XUe"/>
+                                                        <constraint firstAttribute="width" constant="320" id="exo-Ip-9b8"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="742-zY-w59" firstAttribute="centerY" secondItem="0Eu-0S-LKF" secondAttribute="centerY" type="default" id="PQB-Zo-JW8"/>
+                                            <constraint firstItem="742-zY-w59" firstAttribute="centerX" secondItem="0Eu-0S-LKF" secondAttribute="centerX" type="default" id="Rwb-11-XZk"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
+                                    <outlet property="dataSource" destination="5xl-bE-5H7" id="otp-6D-C7W"/>
                                     <outlet property="delegate" destination="5xl-bE-5H7" id="siw-0m-jgW"/>
                                 </connections>
                             </collectionView>
@@ -110,13 +124,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Rw-Ad-LOY" firstAttribute="top" secondItem="VWA-JM-aHh" secondAttribute="top" type="default" id="7Ie-E7-gy3"/>
+                            <constraint firstItem="BOJ-0b-tRC" firstAttribute="top" secondItem="5Rw-Ad-LOY" secondAttribute="bottom" type="default" id="Bk9-Zp-CXh"/>
                             <constraint firstItem="5Rw-Ad-LOY" firstAttribute="trailing" secondItem="VWA-JM-aHh" secondAttribute="trailing" type="default" id="NZo-Tj-PsB"/>
+                            <constraint firstItem="BOJ-0b-tRC" firstAttribute="leading" secondItem="VWA-JM-aHh" secondAttribute="leading" type="default" id="obL-Ox-nNm"/>
                             <constraint firstItem="5Rw-Ad-LOY" firstAttribute="leading" secondItem="VWA-JM-aHh" secondAttribute="leading" type="default" id="ocj-DQ-w33"/>
                             <constraint firstItem="BOJ-0b-tRC" firstAttribute="bottom" secondItem="VWA-JM-aHh" secondAttribute="bottom" type="default" id="u9S-yP-lML"/>
                             <constraint firstItem="BOJ-0b-tRC" firstAttribute="trailing" secondItem="VWA-JM-aHh" secondAttribute="trailing" type="default" id="vSM-ae-jwo"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Filter" image="Filter Feather.png" id="MzU-dd-dto"/>
+                    <connections>
+                        <outlet property="collection_view" destination="BOJ-0b-tRC" id="Jam-cX-yhx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mv6-Kh-QBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,27 +147,35 @@
         <image name="camera.png" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="FilterController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FilterController.h"/>
+            <relationships>
+                <relationship kind="action" name="Use:"/>
+                <relationship kind="action" name="apply_gpuimage_filter:"/>
+                <relationship kind="action" name="numberOfSectionsInCollectionView:"/>
+                <relationship kind="action" name="preferredInterfaceOrientationForPresentation"/>
+                <relationship kind="action" name="runFilters:"/>
+                <relationship kind="action" name="shouldAutorotate"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="supportedInterfaceOrientations"/>
+                <relationship kind="action" name="viewWillAppear:"/>
+                <relationship kind="outlet" name="collection_view" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="PanelController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PanelController.h"/>
             <relationships>
-                <relationship kind="action" name="applyFilter:"/>
-                <relationship kind="action" name="apply_gpuimage_filter:"/>
-                <relationship kind="action" name="backCamera:"/>
                 <relationship kind="action" name="frontCamera:"/>
                 <relationship kind="action" name="preferredInterfaceOrientationForPresentation"/>
                 <relationship kind="action" name="saveImage:"/>
-                <relationship kind="action" name="saveUnfiltered:"/>
                 <relationship kind="action" name="shouldAutorotate"/>
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
                 <relationship kind="action" name="supportedInterfaceOrientations"/>
-                <relationship kind="action" name="toLibrary:"/>
                 <relationship kind="action" name="viewWillAppear:"/>
                 <relationship kind="outlet" name="image_view"/>
-                <relationship kind="outlet" name="output_image_view"/>
-                <relationship kind="outlet" name="table_view"/>
             </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">

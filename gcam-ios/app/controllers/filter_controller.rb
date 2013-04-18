@@ -5,7 +5,9 @@ class FilterController < UIViewController
 
   ib_action :Use
 
-  outlet :image_view
+  outlet :collection_view, UICollectionView
+
+  attr_accessor :image_array
 
   # API
 
@@ -30,11 +32,79 @@ class FilterController < UIViewController
 
   # delegate methods
 
+
+  def apply_gpuimage_filter(buttonIndex)
+    selectedFilter = GPUImageFilter
+    case (buttonIndex)
+    when 0
+      selectedFilter = GPUImageGrayscaleFilter.new
+    when 1
+      selectedFilter = GPUImageSepiaFilter.new
+    when 2
+      selectedFilter = GPUImageSketchFilter.new
+    when 3
+      selectedFilter = GPUImagePixellateFilter.new
+    when 4
+      selectedFilter = GPUImageColorInvertFilter.new
+    when 5
+      selectedFilter = GPUImageToonFilter.new
+    when 6
+      selectedFilter = GPUImagePinchDistortionFilter.new
+    when 7
+      selectedFilter = GPUImageFilter.new
+    end
+    filteredImage = selectedFilter.imageByFilteringImage(image_view.image)
+    filteredImage
+  end
+
   def viewWillAppear(animated)
-    # @filters = (1..11).collect { |i| "e#{i}" }
-    # @filters += (1..7).collect { |i| "g#{i}" }
+    $fc = self
+    NSLog "filters view will appear"
+    @image_array = [$app.main_image]
     super(animated)
   end
+
+  def runFilters(sender)
+    @filters = (1..11).collect { |i| "e#{i}" }
+    @filters += (1..7).collect { |i| "g#{i}" }
+    $queue.async do
+      @filters.each do |f|
+        image = $app.main_image
+        if !(image == nil)
+          new_image =
+          if filter.include?("e")
+            new_image = image.performSelector(filter.to_sym)
+          elsif filter.include?("g")
+            apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
+          end
+          rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
+          @image_array << rotatedImage
+        end
+        run_on_main_thread do
+          collection_view.reloadData
+        end
+      end
+    end
+  end
+
+  def run_on_main_thread &block
+    block.performSelectorOnMainThread "call:", withObject:nil, waitUntilDone:false
+  end
+
+  # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+  #   filter = @filters[indexPath.row]
+  #   image = image_view.image
+  #   if !(image == nil)
+  #     new_image =
+  #     if filter.include?("e")
+  #       new_image = image.performSelector(filter.to_sym)
+  #     elsif filter.include?("g")
+  #       apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
+  #     end
+  #     rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
+  #     output_image_view.image = rotatedImage
+  #   end
+  # end
 
   # switch back to camera
   # set main image
@@ -45,22 +115,22 @@ class FilterController < UIViewController
 
 
   def numberOfSectionsInCollectionView(collectionView)
-    return  noOfItem/ noOfSection
+    return  @image_array.length / 1
   end
 
   def collectionView(collectionView, numberOfItemsInSection:section)
-    return noOfSection
+    return @image_array.length
   end
 
   def collectionView(collectionView, cellForItemAtIndexPath:indexPath)
-    identifier = "Cell";
+    identifier = "Cell"
 
-    cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath:indexPath)
+    cell = collection_view.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath:indexPath)
 
     recipeImageView = cell.viewWithTag(100)
-    recipeImageView.image = imageArray.objectAtIndex(indexPath.section * noOfSection + indexPath.row)
+    recipeImageView.image = @image_array[indexPath.section * @image_array.length + indexPath.row]
 
-    return cell;
+    return cell
   end
 
 
