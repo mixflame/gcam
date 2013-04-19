@@ -84,6 +84,7 @@ class PanelController < UIViewController
       if !(result[:original_image] == nil)
         image_view.image = result[:original_image].scaleToSize CGSize.new(image_view.frame.size.width, image_view.frame.size.height)
         $app.main_image = image_view.image
+        $app.thumbnail = $app.main_image.scaleToSize CGSize.new(64, 64)
       end
     end
   end

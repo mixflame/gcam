@@ -60,30 +60,26 @@ class FilterController < UIViewController
   def viewWillAppear(animated)
     $fc = self
     NSLog "filters view will appear"
-    @image_array = [$app.main_image]
+    @image_array = [$app.thumbnail]
     super(animated)
   end
 
   def runFilters(sender)
     @filters = (1..11).collect { |i| "e#{i}" }
     @filters += (1..7).collect { |i| "g#{i}" }
-    $queue.async do
-      @filters.each do |f|
-        image = $app.main_image
-        if !(image == nil)
-          new_image =
-          if filter.include?("e")
-            new_image = image.performSelector(filter.to_sym)
-          elsif filter.include?("g")
-            apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
-          end
-          rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
-          @image_array << rotatedImage
+    image = $app.thumbnail
+    @filters.each do |f|
+      if !(image == nil)
+        new_image =
+        if filter.include?("e")
+          new_image = image.performSelector(filter.to_sym)
+        elsif filter.include?("g")
+          apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
         end
-        run_on_main_thread do
-          collection_view.reloadData
-        end
+        rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
+        @image_array << rotatedImage
       end
+      collection_view.reloadData
     end
   end
 
