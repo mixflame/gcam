@@ -82,7 +82,7 @@ class PanelController < UIViewController
   def frontCamera(sender)
     BW::Device.camera.front.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
-        image_view.image = result[:original_image].scaleToSize CGSize.new(640, 480)
+        image_view.image = result[:original_image].scaleToSize CGSize.new(image_view.frame.size.width, image_view.frame.size.height)
         $app.main_image = image_view.image
         $app.thumbnail = image_view.image
       end
