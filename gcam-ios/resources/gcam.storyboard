@@ -77,11 +77,6 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="5Rw-Ad-LOY">
                                 <items>
-                                    <barButtonItem title="Run Filters" id="EVr-J1-Eeo">
-                                        <connections>
-                                            <action selector="runFilters:" destination="5xl-bE-5H7" id="dB7-Ml-ubk"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem title="Use" id="hmT-bn-WlK"/>
                                 </items>
                             </toolbar>
@@ -93,14 +88,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0Eu-0S-LKF">
+                                    <collectionViewCell opaque="NO" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" reuseIdentifier="Cell" id="0Eu-0S-LKF">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="742-zY-w59">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="742-zY-w59">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="455" id="8v2-cp-XUe"/>
                                                         <constraint firstAttribute="width" constant="320" id="exo-Ip-9b8"/>
