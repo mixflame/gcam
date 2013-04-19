@@ -1,6 +1,6 @@
 class AppDelegate
 
-  attr_accessor :window, :main_image
+  attr_accessor :window, :main_image, :thumbnail
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     $app = self

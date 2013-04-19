@@ -32,6 +32,8 @@ Motion::Project::App.setup do |app|
 
   app.vendor_project('vendor/Filtrr/FiltrrApp/FiltrrApp/Filtrr', :static)
 
+  # app.vendor_project('vendor/UIImage', :static)
+
   app.vendor_project('vendor/GPUImage/framework', :xcode,
   :target => 'GPUImage',
   :headers_dir => 'Source')
