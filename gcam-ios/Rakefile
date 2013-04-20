@@ -28,15 +28,13 @@ Motion::Project::App.setup do |app|
 
   app.interface_orientations = [:portrait]
 
-  app.deployment_target = '6.1'
+  app.deployment_target = '5.0'
 
   app.vendor_project('vendor/Filtrr/FiltrrApp/FiltrrApp/Filtrr', :static)
 
-  # app.vendor_project('vendor/UIImage', :static)
-
-  app.vendor_project('vendor/GPUImage/framework', :xcode,
-  :target => 'GPUImage',
-  :headers_dir => 'Source')
+  # app.vendor_project('vendor/GPUImage/framework', :xcode,
+  # :target => 'GPUImage',
+  # :headers_dir => 'Source')
 
   app.frameworks << 'OpenGLES'
   app.frameworks << 'QuartzCore'
