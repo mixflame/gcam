@@ -90,7 +90,7 @@ class FilterController < UIViewController
 
 
   def numberOfSectionsInCollectionView(collectionView)
-    return  @filters.length / 1
+    return 1
   end
 
   def collectionView(collectionView, numberOfItemsInSection:section)
@@ -102,6 +102,9 @@ class FilterController < UIViewController
     identifier = "Cell"
 
     cell = collection_view.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath:indexPath)
+
+    # cell.selectionStyle = UITableViewCellSelectionStyleGray
+
     if $app.thumbnail != nil
       recipeImageView = cell.viewWithTag(100)
       filter = @filters[indexPath.section * @filters.length + indexPath.row]
@@ -109,7 +112,14 @@ class FilterController < UIViewController
         recipeImageView.image = $app.thumbnail.performSelector(filter.to_sym)
       end
     end
+
+    cell.selectedBackgroundView = UIImageView.alloc.initWithImage(UIImage.imageNamed("blueborder.png"))
+
     return cell
+
+  end
+
+  def collectionView(collectionView, didSelectItemAtIndexPath:indexPath)
 
   end
 
