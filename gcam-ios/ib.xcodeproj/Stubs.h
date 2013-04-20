@@ -93,9 +93,26 @@
 -(IBAction) shouldAutorotate;
 -(IBAction) shouldAutorotateToInterfaceOrientation:(id) interface;
 -(IBAction) viewWillAppear:(id) animated;
+-(IBAction) share;
 -(IBAction) saveImage:(id) sender;
 -(IBAction) backCamera:(id) sender;
 -(IBAction) toLibrary:(id) sender;
+
+@end
+
+
+@interface SharekitConfiguration : DefaultSHKConfigurator
+
+
+
+
+
+-(IBAction) appName;
+-(IBAction) appURL;
+-(IBAction) facebookAppId;
+-(IBAction) twitterConsumerKey;
+-(IBAction) twitterSecret;
+-(IBAction) twitterCallbackUrl;
 
 @end
 

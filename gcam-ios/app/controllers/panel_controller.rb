@@ -41,6 +41,18 @@ class PanelController < UIViewController
     super(animated)
   end
 
+  def share
+    #item = SHKItem.text("This is the text you'll be sharing!")
+
+    image = $app.main_image
+    item = SHKItem.image(image, title:"Taken with Global Camera")
+    actionSheet = SHKActionSheet.actionSheetForItem(item)
+
+    SHK.setRootViewController(self)
+
+    actionSheet.showInView(self.view)
+  end
+
   # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
   #   filter = @filters[indexPath.row]
   #   image = image_view.image

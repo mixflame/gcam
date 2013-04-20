@@ -3,6 +3,11 @@ class AppDelegate
   attr_accessor :window, :main_image, :thumbnail
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+
+    #ShareKit
+    SHKConfiguration.sharedInstanceWithConfigurator(SharekitConfiguration.alloc.init)
+    SHK.flushOfflineQueue
+
     $app = self
     $queue = Dispatch::Queue.new('com.jonsoft.gcam-ios')
 

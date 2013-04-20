@@ -44,6 +44,11 @@
                                             <action selector="toLibrary:" destination="c1b-D6-9bv" id="jZg-xe-C5r"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Share" id="rqr-ex-mrz">
+                                        <connections>
+                                            <action selector="share" destination="c1b-D6-9bv" id="F9I-PJ-NKc"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Save" id="vay-uQ-aSA">
                                         <connections>
                                             <action selector="saveImage:" destination="c1b-D6-9bv" id="ETr-IJ-ebe"/>
@@ -173,6 +178,7 @@
                 <relationship kind="action" name="frontCamera:"/>
                 <relationship kind="action" name="preferredInterfaceOrientationForPresentation"/>
                 <relationship kind="action" name="saveImage:"/>
+                <relationship kind="action" name="share"/>
                 <relationship kind="action" name="shouldAutorotate"/>
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
                 <relationship kind="action" name="supportedInterfaceOrientations"/>

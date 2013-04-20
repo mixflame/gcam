@@ -1,0 +1,28 @@
+
+PODS:
+- Facebook-iOS-SDK (3.1.1)
+- JSONKit (1.5pre)
+- Reachability (3.1.0)
+- SSKeychain (0.2.1)
+- ShareKit/Facebook (2.2):
+  - Facebook-iOS-SDK (= 3.1.1)
+  - Reachability
+  - SSKeychain (= 0.2.1)
+- ShareKit/Twitter (2.2):
+  - JSONKit
+  - Reachability
+  - SSKeychain (= 0.2.1)
+
+DEPENDENCIES:
+- ShareKit/Facebook
+- ShareKit/Twitter
+
+SPEC CHECKSUMS:
+  Facebook-iOS-SDK: 5fc068ebfd8c8c9b0fad476bc36dbbf1fffeebc8
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
+  SSKeychain: ffa1a79eb716d9ed1ca184fb0cf218087ca28486
+  ShareKit/Facebook: b7352d4cf41c35be8d3307c98068945b1134afdd
+  ShareKit/Twitter: b7352d4cf41c35be8d3307c98068945b1134afdd
+
+COCOAPODS: 0.16.1
