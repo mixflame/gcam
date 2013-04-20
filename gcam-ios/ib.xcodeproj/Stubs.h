@@ -75,6 +75,7 @@
 -(IBAction) shouldAutorotateToInterfaceOrientation:(id) interface;
 -(IBAction) apply_gpuimage_filter:(id) buttonIndex;
 -(IBAction) viewWillAppear:(id) animated;
+-(IBAction) ApplyFilter:(id) sender;
 -(IBAction) numberOfSectionsInCollectionView:(id) collectionView;
 
 @end

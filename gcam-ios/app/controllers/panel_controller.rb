@@ -34,23 +34,12 @@ class PanelController < UIViewController
     # @filters = (1..11).collect { |i| "e#{i}" }
     # @filters += (1..7).collect { |i| "g#{i}" }
     NSLog "panel view will appear"
+    if $app.main_image != nil
+      image_view.image = $app.main_image
+      $app.thumbnail = image_view.image.scaleToSize CGSize.new(64,64)
+    end
     super(animated)
   end
-
-  # def tableView(tableView, cellForRowAtIndexPath:indexPath)
-  #   cell = tableView.dequeueReusableCellWithIdentifier("gcam")
-  #   if not cell
-  #     cell = UITableViewCell.alloc.initWithStyle UITableViewCellStyleDefault, reuseIdentifier:'gcam'
-  #   end
-
-  #   cell.setText @filters[indexPath.row]
-
-  #   cell
-  # end
-
-  # def tableView(tableView, numberOfRowsInSection: section)
-  #   @filters.nil? ? 0 : @filters.size
-  # end
 
   # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
   #   filter = @filters[indexPath.row]
@@ -75,19 +64,8 @@ class PanelController < UIViewController
     end
   end
 
-  #GPUImage
 
   # picture takers
-
-  # def frontCamera(sender)
-  #   BW::Device.camera.front.picture(media_types: [:image]) do |result|
-  #     if !(result[:original_image] == nil)
-  #       image_view.image = result[:original_image].scaleToSize CGSize.new(image_view.frame.size.width, image_view.frame.size.height)
-  #       $app.main_image = image_view.image
-  #       $app.thumbnail = image_view.image.scaleToSize CGSize.new(64,64)
-  #     end
-  #   end
-  # end
 
   def backCamera(sender)
     BW::Device.camera.rear.picture(media_types: [:image]) do |result|

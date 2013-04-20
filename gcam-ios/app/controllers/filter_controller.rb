@@ -7,7 +7,7 @@ class FilterController < UIViewController
 
   outlet :collection_view, UICollectionView
 
-  attr_accessor :filters
+  attr_accessor :filters, :filter
 
   # API
 
@@ -83,8 +83,9 @@ class FilterController < UIViewController
 
   # switch back to camera
   # set main image
-  def Use(sender)
-
+  def ApplyFilter(sender)
+    $app.main_image = $app.main_image.performSelector(@filter.to_sym)
+    $app.window.rootViewController.selectedIndex = 0
   end
 
 
@@ -103,8 +104,6 @@ class FilterController < UIViewController
 
     cell = collection_view.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath:indexPath)
 
-    # cell.selectionStyle = UITableViewCellSelectionStyleGray
-
     if $app.thumbnail != nil
       recipeImageView = cell.viewWithTag(100)
       filter = @filters[indexPath.section * @filters.length + indexPath.row]
@@ -120,7 +119,8 @@ class FilterController < UIViewController
   end
 
   def collectionView(collectionView, didSelectItemAtIndexPath:indexPath)
-
+    @filter = @filters[indexPath.section * @filters.length + indexPath.row]
+    NSLog("filter: #{@filter}")
   end
 
 
