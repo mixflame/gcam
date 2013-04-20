@@ -94,7 +94,7 @@ class FilterController < UIViewController
   end
 
   def collectionView(collectionView, numberOfItemsInSection:section)
-    return @filters.length
+    return @filters.nil? ? 0 : @filters.size
   end
 
   def collectionView(collectionView, cellForItemAtIndexPath:indexPath)
@@ -105,7 +105,9 @@ class FilterController < UIViewController
     if $app.thumbnail != nil
       recipeImageView = cell.viewWithTag(100)
       filter = @filters[indexPath.section * @filters.length + indexPath.row]
-      recipeImageView.image = $app.thumbnail.performSelector(filter.to_sym)
+      if filter != nil
+        recipeImageView.image = $app.thumbnail.performSelector(filter.to_sym)
+      end
     end
     return cell
 

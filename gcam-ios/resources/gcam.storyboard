@@ -87,20 +87,20 @@
                             </toolbar>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BOJ-0b-tRC">
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JTp-qv-rgO">
-                                    <size key="itemSize" width="320" height="451"/>
+                                    <size key="itemSize" width="64" height="64"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Cell" id="0Eu-0S-LKF">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="451"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="451"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" image="camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="742-zY-w59">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="742-zY-w59">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" type="user" id="5He-xV-MgV"/>
                                                         <constraint firstAttribute="height" constant="64" type="user" id="UbW-fZ-nbt"/>
