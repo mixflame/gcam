@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYo-lG-u8I"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYo-lG-u8I"/>
                             <toolbar autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="uFb-gG-dyt">
                                 <items>
                                     <barButtonItem title="Cam" id="awY-eM-b39">
@@ -59,10 +59,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BYo-lG-u8I" firstAttribute="top" secondItem="uFb-gG-dyt" secondAttribute="bottom" type="default" id="AIe-02-4X2"/>
                             <constraint firstItem="BYo-lG-u8I" firstAttribute="bottom" secondItem="jhj-lk-Yfg" secondAttribute="bottom" type="default" id="DoG-Em-Squ"/>
                             <constraint firstItem="BYo-lG-u8I" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="IHM-xH-ThL"/>
                             <constraint firstItem="uFb-gG-dyt" firstAttribute="top" secondItem="jhj-lk-Yfg" secondAttribute="top" type="default" id="Kgk-mT-HLp"/>
+                            <constraint firstItem="BYo-lG-u8I" firstAttribute="top" secondItem="uFb-gG-dyt" secondAttribute="bottom" type="default" id="O8x-uh-O9w"/>
                             <constraint firstItem="BYo-lG-u8I" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="QOi-Nf-lIp"/>
                             <constraint firstItem="uFb-gG-dyt" firstAttribute="trailing" secondItem="jhj-lk-Yfg" secondAttribute="trailing" type="default" id="rFF-32-B3A"/>
                             <constraint firstItem="uFb-gG-dyt" firstAttribute="leading" secondItem="jhj-lk-Yfg" secondAttribute="leading" type="default" id="whc-XC-SVx"/>
