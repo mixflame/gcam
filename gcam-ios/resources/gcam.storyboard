@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="-742" y="-260"/>
         </scene>
-        <!--Filter Controller - Filter-->
+        <!--Filter Controller - Filters-->
         <scene sceneID="BLU-i6-dIu">
             <objects>
                 <viewController storyboardIdentifier="Filter" id="5xl-bE-5H7" customClass="FilterController" sceneMemberID="viewController">
@@ -131,7 +131,7 @@
                             <constraint firstItem="BOJ-0b-tRC" firstAttribute="trailing" secondItem="VWA-JM-aHh" secondAttribute="trailing" type="default" id="vSM-ae-jwo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Filter" image="Filter Feather.png" id="MzU-dd-dto"/>
+                    <tabBarItem key="tabBarItem" title="Filters" image="Filter Feather.png" id="MzU-dd-dto"/>
                     <connections>
                         <outlet property="collection_view" destination="BOJ-0b-tRC" id="Jam-cX-yhx"/>
                     </connections>
