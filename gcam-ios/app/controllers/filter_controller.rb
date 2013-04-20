@@ -7,7 +7,7 @@ class FilterController < UIViewController
 
   outlet :collection_view, UICollectionView
 
-  attr_accessor :image_array
+  attr_accessor :filters
 
   # API
 
@@ -60,31 +60,10 @@ class FilterController < UIViewController
   def viewWillAppear(animated)
     $fc = self
     NSLog "filters view will appear"
-    @image_array = [$app.thumbnail]
-    super(animated)
-  end
-
-  def runFilters(sender)
     @filters = (1..11).collect { |i| "e#{i}" }
-    @filters += (1..7).collect { |i| "g#{i}" }
-    image = $app.thumbnail
-    @filters.each do |f|
-      if !(image == nil)
-        new_image =
-        if filter.include?("e")
-          new_image = image.performSelector(filter.to_sym)
-        elsif filter.include?("g")
-          apply_gpuimage_filter(filter.scan(/\d+/)[0].to_i)
-        end
-        rotatedImage = UIImage.imageWithCGImage(new_image.CGImage, scale: 1.0, orientation: UIImageOrientationRight)
-        @image_array << rotatedImage
-      end
-      collection_view.reloadData
-    end
-  end
-
-  def run_on_main_thread &block
-    block.performSelectorOnMainThread "call:", withObject:nil, waitUntilDone:false
+    collection_view.reloadData
+    # @filters += (1..7).collect { |i| "g#{i}" }
+    super(animated)
   end
 
   # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
@@ -111,22 +90,25 @@ class FilterController < UIViewController
 
 
   def numberOfSectionsInCollectionView(collectionView)
-    return  @image_array.length / 1
+    return  @filters.length / 1
   end
 
   def collectionView(collectionView, numberOfItemsInSection:section)
-    return @image_array.length
+    return @filters.length
   end
 
   def collectionView(collectionView, cellForItemAtIndexPath:indexPath)
+
     identifier = "Cell"
 
     cell = collection_view.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath:indexPath)
-
-    recipeImageView = cell.viewWithTag(100)
-    recipeImageView.image = @image_array[indexPath.section * @image_array.length + indexPath.row]
-
+    if $app.thumbnail != nil
+      recipeImageView = cell.viewWithTag(100)
+      filter = @filters[indexPath.section * @filters.length + indexPath.row]
+      recipeImageView.image = $app.thumbnail.performSelector(filter.to_sym)
+    end
     return cell
+
   end
 
 

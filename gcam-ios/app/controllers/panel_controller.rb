@@ -79,30 +79,34 @@ class PanelController < UIViewController
 
   # picture takers
 
-  def frontCamera(sender)
-    BW::Device.camera.front.picture(media_types: [:image]) do |result|
+  # def frontCamera(sender)
+  #   BW::Device.camera.front.picture(media_types: [:image]) do |result|
+  #     if !(result[:original_image] == nil)
+  #       image_view.image = result[:original_image].scaleToSize CGSize.new(image_view.frame.size.width, image_view.frame.size.height)
+  #       $app.main_image = image_view.image
+  #       $app.thumbnail = image_view.image.scaleToSize CGSize.new(64,64)
+  #     end
+  #   end
+  # end
+
+  def backCamera(sender)
+    BW::Device.camera.rear.picture(media_types: [:image]) do |result|
       if !(result[:original_image] == nil)
         image_view.image = result[:original_image].scaleToSize CGSize.new(image_view.frame.size.width, image_view.frame.size.height)
         $app.main_image = image_view.image
-        $app.thumbnail = image_view.image
+        $app.thumbnail = image_view.image.scaleToSize CGSize.new(64,64)
       end
     end
   end
 
-  # def backCamera(sender)
-  #   BW::Device.camera.rear.picture(media_types: [:image]) do |result|
-  #     if !(result[:original_image] == nil)
-  #       image_view.image = result[:original_image] #.scaleToSize CGSize.new(640, 480)
-  #     end
-  #   end
-  # end
-
-  # def toLibrary(sender)
-  #   BW::Device.camera.any.picture(media_types: [:image]) do |result|
-  #     if !(result[:original_image] == nil)
-  #       image_view.image = result[:original_image] #.scaleToSize CGSize.new(640, 480)
-  #     end
-  #   end
-  # end
+  def toLibrary(sender)
+    BW::Device.camera.any.picture(media_types: [:image]) do |result|
+      if !(result[:original_image] == nil)
+        image_view.image = result[:original_image]
+        $app.main_image = image_view.image
+        $app.thumbnail = image_view.image.scaleToSize CGSize.new(64,64)
+      end
+    end
+  end
 
 end
