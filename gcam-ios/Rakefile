@@ -61,4 +61,8 @@ Motion::Project::App.setup do |app|
     pod 'ShareKit/Twitter'
   end
 
+  app.testflight.sdk = 'vendor/TestFlight'
+  app.testflight.api_token = '9f04bee16d21fa6dc5752e65cca07035_MTAwMjgxODIwMTMtMDQtMjAgMTM6MjY6NDIuNTg3NDQy'
+  app.testflight.team_token = '7b3f8f31240990f5d5b916404935a877_MjE0MzQ4MjAxMy0wNC0yMSAxMTo0NjozOC44MzcwMTA'
+
 end

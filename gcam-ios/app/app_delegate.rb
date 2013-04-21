@@ -4,6 +4,9 @@ class AppDelegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
+    #TestFlight
+    TestFlight.takeOff("edc4570c-845f-4371-af8d-2c504a301217")
+
     #ShareKit
     SHKConfiguration.sharedInstanceWithConfigurator(SharekitConfiguration.alloc.init)
     SHK.flushOfflineQueue
