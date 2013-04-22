@@ -12,9 +12,11 @@ Bundler.require(:RubyMotion)
 Motion::Project::App.setup do |app|
 
   app.identifier = 'com.jonsoft.gcam'
-  app.info_plist['CFBundleShortVersionString'] = "1.0.0"
-  app.short_version = "1.0"
-  app.version       = "1.0"
+  app.info_plist['CFBundleShortVersionString'] = "1.1.0"
+  app.short_version = "1.1"
+  app.version       = "1.1"
+
+  app.provisioning_profile = "/Users/jsilverman2/Library/MobileDevice/Provisioning Profiles/25ADA9A5-8875-40CA-ABB4-059ED1EF7830.mobileprovision"
 
   # app.provisioning_profile = "/Users/jsilverman2/Library/MobileDevice/Provisioning Profiles/60F7EEB6-6E11-4713-9039-839CDBB930D4.mobileprovision"
   # app.codesign_certificate = "iPhone Distribution: Jonathan Silverman"
