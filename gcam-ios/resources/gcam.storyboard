@@ -26,7 +26,7 @@
         <!--Panel Controller - Camera-->
         <scene sceneID="XI4-BI-tU0">
             <objects>
-                <viewController storyboardIdentifier="Panel" id="c1b-D6-9bv" customClass="PanelController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Panel" wantsFullScreenLayout="YES" id="c1b-D6-9bv" customClass="PanelController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="jhj-lk-Yfg">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,6 +171,9 @@
                 <relationship kind="outlet" name="collection_view" candidateClass="UICollectionView"/>
             </relationships>
         </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="PanelController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PanelController.h"/>
             <relationships>
@@ -186,6 +189,18 @@
                 <relationship kind="action" name="viewWillAppear:"/>
                 <relationship kind="outlet" name="image_view"/>
             </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
